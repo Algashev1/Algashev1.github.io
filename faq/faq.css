@@ -1,0 +1,12 @@
+html, body {
+    height: 100%;
+}
+
+.content-wrapper {
+    height: 100%;
+    display: flex;
+}
+
+.in-work {
+    margin: auto;
+}

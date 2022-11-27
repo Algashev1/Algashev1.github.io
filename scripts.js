@@ -1,5 +1,7 @@
 "use strict";
 
+const FAQ_PAGE = "./faq/faq.html";
+
 const Path = {
   1: "./examples/task1/task1.html",
   2: "./examples/task2/task2.html",
@@ -12,6 +14,10 @@ const Path = {
 
 function selectTask(numberOfTask) {
   document.getElementById("iframe").setAttribute("src", Path[numberOfTask]);
+}
+
+function openFAQ() {
+  document.getElementById("iframe").setAttribute("src", FAQ_PAGE);
 }
 
 function initPage() {
