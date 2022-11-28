@@ -42,6 +42,7 @@ function goToPage() {
   for (const { matcher, getPath } of ROUTES) {
     if (matcher.exec(hash)) {
       iframe.setAttribute("src", getPath(hash));
+      return;
     }
   }
 }
