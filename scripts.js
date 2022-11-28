@@ -1,6 +1,7 @@
 "use strict";
 
 const FAQ_PAGE = "./faq/faq.html";
+const TASKS_PAGE = "./tasks/tasks.html";
 
 const Path = {
   1: "./examples/task1/task1.html",
@@ -59,7 +60,14 @@ function goToPage() {
       document.getElementById("iframe").setAttribute("src", FAQ_PAGE);
       break;
     }
+    case "#tasks": {
+      document.getElementById("iframe").setAttribute("src", TASKS_PAGE);
+    }
   }
+}
+
+function openTaskDescription() {
+  document.getElementById("iframe").setAttribute("src", TASKS_PAGE);
 }
 
 initPage();
