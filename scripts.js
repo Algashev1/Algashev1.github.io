@@ -4,6 +4,22 @@ const FAQ_PAGE = "./faq/faq.html";
 const TASKS_PAGE = "./tasks/tasks.html";
 const exampleRegExp = /#example-\d+/;
 
+const ROUTES = [{
+  matcher: exampleRegExp,
+  getPath: (hash) => {
+    const [numberOfTask] = hash.match(/\d+/);
+
+    return generateTaskPath(numberOfTask)
+  },
+}, {
+  matcher: /#(faq|tasks)/,
+  getPath: (hash) => {
+    const pathWithoutHash = hash.slice(1);
+
+    return `${pathWithoutHash}/${pathWithoutHash}.html`;
+  }
+}]
+
 function generateTaskPath(numberOfTask) {
   return `/examples/task${numberOfTask}/task${numberOfTask}.html`;
 }
@@ -24,12 +40,10 @@ function goToPage() {
   const hash = window.location.hash;
   const iframe = document.getElementById("iframe")
 
-  if (exampleRegExp.exec(hash)) {
-    const [numberOfTask] = hash.match(/\d+/);
-    iframe.setAttribute("src", generateTaskPath(numberOfTask));
-  } else {
-    const pathWithoutHash = hash.slice(1);
-    iframe.setAttribute("src", `/${pathWithoutHash}/${pathWithoutHash}.html`);
+  for (const { matcher, getPath } of ROUTES) {
+    if (matcher.exec(hash)) {
+      iframe.setAttribute("src", getPath(hash));
+    }
   }
 }
 
