@@ -1,0 +1,77 @@
+.header {
+    padding: 1rem 2rem;
+}
+
+.stepper-wrapper {
+    padding: 0 1rem;
+}
+
+.steps-wrapper {
+    margin-top: 1rem;
+    padding: 0 2rem;
+}
+
+.body-color {
+    background: #777;
+}
+
+.body-second-color {
+    background: lightgray;
+}
+
+.main-title {
+    font-size: 42px;
+    color: #ffffff;
+    margin: 1rem 0;
+}
+
+.sub-title {
+    font-size: 30px;
+    color: #ffffff;
+    margin: 1rem 0;
+}
+
+.text {
+    font-size: 18px;
+    color: #ffffff;
+    margin: 1rem 0;
+}
+
+.link {
+    background: #007bff;
+    font-size: 18px;
+    color: #ffffff;
+    padding: 0.5rem 1rem;
+    border-radius: 0.3rem;
+    margin-right: 1rem;
+    text-decoration: none;
+}
+
+.link:hover {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.content {
+    display: flex;
+}
+
+.content-left {
+    width: 60%;  
+}
+
+.content-right {
+    width: 40%;
+}
+
+.content-block {
+    background: #777;
+    margin: 1rem;
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+.photo {
+    width: 100%;
+    height: auto !important;
+}

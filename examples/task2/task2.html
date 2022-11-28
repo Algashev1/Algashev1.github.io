@@ -2,11 +2,134 @@
 <html lang="ru">
 
 <head>
-    <title>Задание 2</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bs-stepper/dist/css/bs-stepper.min.css">
+    <link rel="stylesheet" href="./task2.css">
+
+    <script src=" https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+        </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous">
+        </script>
+    <script src="https://cdn.jsdelivr.net/npm/bs-stepper/dist/js/bs-stepper.min.js"></script>
 </head>
 
 <body>
-    <h1>Задание 2</h1>
+    <div class="header">
+        <h2 class="title">Лабораторная работа № 2</h2>
+        <a href="#" class="link-primary">Посмотреть задание</a>
+    </div>
+
+
+    <div class="bs-stepper stepper-wrapper">
+        <div class="bs-stepper-header" role="tablist">
+            <div class="step" data-target="#part0">
+                <button type="button" class="step-trigger" role="tab" aria-controls="part0" id="part0-trigger"
+                    onclick="step(0)">
+                    <span id="circle-0" class="bs-stepper-circle">0</span>
+                </button>
+            </div>
+            <div class="line"></div>
+            <div class="step" data-target="#part1">
+                <button type="button" class="step-trigger" role="tab" aria-controls="part1" id="part1-trigger"
+                    onclick="step(1)">
+                    <span id="circle-1" class="bs-stepper-circle">1</span>
+                </button>
+            </div>
+            <div class="line"></div>
+            <div class="step" data-target="#part2">
+                <button type="button" class="step-trigger" role="tab" aria-controls="part2"
+                    id="information-part-trigger" onclick="step(2)">
+                    <span id="circle-2" class="bs-stepper-circle">2</span>
+                </button>
+            </div>
+            <div class="line"></div>
+            <div class="step" data-target="#part3">
+                <button type="button" class="step-trigger" role="tab" aria-controls="part3"
+                    id="information-part-trigger" onclick="step(3)">
+                    <span id="circle-3" class="bs-stepper-circle">3</span>
+                </button>
+            </div>
+            <div class="line"></div>
+            <div class="step" data-target="#part4">
+                <button type="button" class="step-trigger" role="tab" aria-controls="part4"
+                    id="information-part-trigger" onclick="step(4)">
+                    <span id="circle-4" class="bs-stepper-circle">4</span>
+                </button>
+            </div>
+            <div class="line"></div>
+            <div class="step" data-target="#part5">
+                <button type="button" class="step-trigger" role="tab" aria-controls="part5"
+                    id="information-part-trigger" onclick="step(5)">
+                    <span id="circle-5" class="bs-stepper-circle">5</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <hr>
+    <div id="body-task-2" class="steps-wrapper">
+        <div id="content">
+            <div id="content-left">
+                <div>
+                    <h1 id="first-title">Это моя первая HTML страница</h1>
+                </div>
+
+                <div>
+                    <h1 id="main-title">О себе</h1>
+                </div>
+
+                <div>
+                    <p id="main-text">
+                        Меня зовут <b>Иванов Иван Иванович</b>. Я родился в городе Иваново в
+                        2002 году. У меня есть старший брат, его зовут Иван. Мы живём в центре
+                        города, недалеко от ЖД вокзала. Я занимаюсь плаваньем с 10 лет. Ходил
+                        в школу <del>номер 23</del> <i>номер 74</i>.
+                    </p>
+                </div>
+
+                <div>
+                    <h2 id="cinema-title">Какие фильмы мне нравятся:</h2>
+                    <ul id="cinema-list">
+                        <li>Ирония судьбы</li>
+                        <li>Мстители</li>
+                        <li>Титаник</li>
+                        <li>Ночной дозор</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h2 id="music-title">Какая музыка мне нравится:</h2>
+                    <ol id="music-list">
+                        <li>Русский рок</li>
+                        <li>Классическая музыка</li>
+                        <li>Шансон</li>
+                        <li>Блюз</li>
+                    </ol>
+                </div>
+
+                <div>
+                    <h2 id="links-title">Как связаться со мной</h2>
+                    <span>
+                        <a id="vk-link" href="https://vk.com/algashev" target="_blank">ВКонтакте</a>
+                    </span>
+                    <span>
+                        <a id="tg-link" href="https://t.me/algashev" target="_blank">Telegram</a>
+                    </span>
+                </div>
+            </div>
+
+
+            <div id="content-right">
+                <img id="photo" src="../../images/cat5.jpg" title="Моя фотография" height="300" />
+            </div>
+        </div>
+
+    </div>
+
+    <script src="./task2.js"></script>
 </body>
 
 </html>
