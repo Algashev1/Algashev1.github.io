@@ -24,4 +24,43 @@ function initPage() {
   document.getElementById("iframe").setAttribute("src", Path[1]);
 }
 
+function goToPage() {
+  const hash = window.location.hash;
+  switch (hash) {
+    case "#example-1": {
+      document.getElementById("iframe").setAttribute("src", Path[1]);
+      break;
+    }
+    case "#example-2": {
+      document.getElementById("iframe").setAttribute("src", Path[2]);
+      break;
+    }
+    case "#example-3": {
+      document.getElementById("iframe").setAttribute("src", Path[3]);
+      break;
+    }
+    case "#example-4": {
+      document.getElementById("iframe").setAttribute("src", Path[4]);
+      break;
+    }
+    case "#example-5": {
+      document.getElementById("iframe").setAttribute("src", Path[5]);
+      break;
+    }
+    case "#example-6": {
+      document.getElementById("iframe").setAttribute("src", Path[6]);
+      break;
+    }
+    case "#example-7": {
+      document.getElementById("iframe").setAttribute("src", Path[7]);
+      break;
+    }
+    case "#faq": {
+      document.getElementById("iframe").setAttribute("src", FAQ_PAGE);
+      break;
+    }
+  }
+}
+
 initPage();
+goToPage();
