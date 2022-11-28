@@ -2,10 +2,9 @@
 
 const FAQ_PAGE = "./faq/faq.html";
 const TASKS_PAGE = "./tasks/tasks.html";
-const exampleRegExp = /#example-\d+/;
 
 const ROUTES = [{
-  matcher: exampleRegExp,
+  matcher: /#example-\d+/,
   getPath: (hash) => {
     const [numberOfTask] = hash.match(/\d+/);
 
