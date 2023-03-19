@@ -3,28 +3,33 @@
 const FAQ_PAGE = "./faq/faq.html";
 const TASKS_PAGE = "./tasks/tasks.html";
 
-const ROUTES = [{
-  matcher: /#example-\d+/,
-  getPath: (hash) => {
-    const [numberOfTask] = hash.match(/\d+/);
+const ROUTES = [
+  {
+    matcher: /#example-\d+/,
+    getPath: (hash) => {
+      const [numberOfTask] = hash.match(/\d+/);
 
-    return generateTaskPath(numberOfTask)
+      return generateTaskPath(numberOfTask);
+    },
   },
-}, {
-  matcher: /#(faq|tasks)/,
-  getPath: (hash) => {
-    const pathWithoutHash = hash.slice(1);
+  {
+    matcher: /#(faq|tasks)/,
+    getPath: (hash) => {
+      const pathWithoutHash = hash.slice(1);
 
-    return `${pathWithoutHash}/${pathWithoutHash}.html`;
-  }
-}]
+      return `${pathWithoutHash}/${pathWithoutHash}.html`;
+    },
+  },
+];
 
 function generateTaskPath(numberOfTask) {
-  return `/examples/task${numberOfTask}/task${numberOfTask}.html`;
+  return `./examples/task${numberOfTask}/task${numberOfTask}.html`;
 }
 
 function selectTask(numberOfTask) {
-  document.getElementById("iframe").setAttribute("src", generateTaskPath(numberOfTask));
+  document
+    .getElementById("iframe")
+    .setAttribute("src", generateTaskPath(numberOfTask));
 }
 
 function openFAQ() {
@@ -37,7 +42,7 @@ function initPage() {
 
 function goToPage() {
   const hash = window.location.hash;
-  const iframe = document.getElementById("iframe")
+  const iframe = document.getElementById("iframe");
 
   for (const { matcher, getPath } of ROUTES) {
     if (matcher.exec(hash)) {
