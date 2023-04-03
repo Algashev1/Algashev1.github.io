@@ -3,7 +3,7 @@ const container = document.getElementById("main-content");
 const videoLinks = [
   "",
   "https://bbb.ssau.ru:8443/playback/presentation/2.3/87b6ec23de33ee4841108040bdb92d69753a78f5-1679921954769",
-  "",
+  "https://bbb.ssau.ru:8443/playback/presentation/2.3/87b6ec23de33ee4841108040bdb92d69753a78f5-1680526530305",
 ];
 
 function buildTasksList() {
