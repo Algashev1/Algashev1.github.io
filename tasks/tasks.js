@@ -7,6 +7,7 @@ const videoLinks = [
   "https://bbb.ssau.ru:8443/playback/presentation/2.3/87b6ec23de33ee4841108040bdb92d69753a78f5-1681138516254",
   "https://bbb.ssau.ru:8443/playback/presentation/2.3/87b6ec23de33ee4841108040bdb92d69753a78f5-1681736160367",
   "https://bbb.ssau.ru:8443/playback/presentation/2.3/87b6ec23de33ee4841108040bdb92d69753a78f5-1682341002764",
+  "https://bbb.ssau.ru:8443/playback/presentation/2.3/87b6ec23de33ee4841108040bdb92d69753a78f5-1682686173576",
 ];
 
 function buildTasksList() {
@@ -20,7 +21,7 @@ function buildTasksList() {
     </p>
   `;
 
-  for (let i = 1; i <= 5; i++) {
+  for (let i = 1; i <= 6; i++) {
     html += `
         <h3 id="task-${i}">
             <a href="#task-${i}"></a>
