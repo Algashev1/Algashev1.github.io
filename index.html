@@ -370,34 +370,6 @@ button { cursor: pointer; font: inherit; }
 }
 #success-screen p { font-size: var(--text-sm); color: var(--color-text-muted); }
 
-/* Download actions */
-.download-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-3);
-  justify-content: center;
-  margin-top: var(--space-6);
-}
-.btn-dl {
-  display: inline-flex; align-items: center; gap: var(--space-2);
-  background: var(--color-surface);
-  border: 1.5px solid var(--color-border);
-  border-radius: var(--radius-md);
-  padding: var(--space-3) var(--space-6);
-  font-size: var(--text-sm);
-  font-weight: 700;
-  color: var(--color-blue);
-  cursor: pointer;
-  transition: border-color var(--transition), box-shadow var(--transition), background var(--transition);
-  box-shadow: var(--shadow-sm);
-}
-.btn-dl:hover { border-color: var(--color-blue-mid); background: var(--color-blue-pale); box-shadow: var(--shadow-md); }
-.btn-new {
-  background: var(--color-blue); color: #fff;
-  border-color: var(--color-blue);
-}
-.btn-new:hover { background: var(--color-blue-mid); }
-
 /* === VALIDATION === */
 .q-card.has-error { border-color: var(--color-error); }
 .error-msg {
@@ -409,79 +381,6 @@ button { cursor: pointer; font: inherit; }
   gap: var(--space-1);
 }
 
-/* === ADMIN PANEL (hidden by default) === */
-#admin-toggle-wrap {
-  position: fixed;
-  bottom: var(--space-4);
-  right: var(--space-4);
-  z-index: 100;
-  display: none;
-}
-#admin-toggle-wrap.admin-unlocked {
-  display: block;
-}
-.btn-admin {
-  background: var(--color-blue);
-  color: #fff;
-  border: none;
-  border-radius: var(--radius-lg);
-  padding: var(--space-2) var(--space-4);
-  font-size: var(--text-xs);
-  font-weight: 700;
-  box-shadow: var(--shadow-lg);
-  opacity: 0.7;
-  transition: opacity var(--transition);
-}
-.btn-admin:hover { opacity: 1; }
-
-#admin-panel {
-  display: none;
-  position: fixed;
-  bottom: 0; left: 0; right: 0;
-  background: var(--color-surface);
-  border-top: 2px solid var(--color-blue);
-  box-shadow: 0 -4px 24px rgba(0,30,100,0.12);
-  padding: var(--space-5) var(--space-6);
-  z-index: 99;
-}
-#admin-panel.open { display: block; animation: slideUp 0.25s ease; }
-@keyframes slideUp { from { transform: translateY(20px); opacity: 0; } to { transform: none; opacity: 1; } }
-.admin-inner {
-  max-width: 960px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: var(--space-4);
-}
-.admin-inner h4 {
-  font-size: var(--text-sm);
-  font-weight: 700;
-  color: var(--color-blue);
-}
-.admin-stat {
-  font-size: var(--text-xs);
-  color: var(--color-text-muted);
-  background: var(--color-surface-2);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-sm);
-  padding: var(--space-1) var(--space-3);
-}
-.btn-admin-dl {
-  margin-left: auto;
-  display: inline-flex; align-items: center; gap: var(--space-2);
-  background: var(--color-blue); color: #fff; border: none;
-  border-radius: var(--radius-md);
-  padding: var(--space-2) var(--space-5);
-  font-size: var(--text-sm); font-weight: 700;
-  cursor: pointer;
-  transition: background var(--transition);
-}
-.btn-admin-dl:hover { background: var(--color-blue-mid); }
-.btn-admin-close {
-  background: none; border: none; color: var(--color-text-muted);
-  font-size: 1.25rem; line-height: 1; cursor: pointer; margin-left: var(--space-2);
-}
 
 /* === FOOTER === */
 footer {
@@ -501,6 +400,50 @@ footer {
   .survey-hero { padding: var(--space-8) var(--space-4); }
   .block-label { font-size: var(--text-lg); }
 }
+
+/* ── LOADER OVERLAY ── */
+#loader-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  align-items: center;
+  justify-content: center;
+}
+#loader-overlay.active {
+  display: flex;
+  animation: fadeIn 0.2s ease;
+}
+.loader-box {
+  background: var(--color-card, #fff);
+  border-radius: var(--radius-lg, 0.75rem);
+  padding: 2rem 2.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  box-shadow: var(--shadow-lg);
+}
+.loader-spinner {
+  width: 48px;
+  height: 48px;
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  border-top-color: var(--color-blue-mid, #3b6fd4);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+.loader-text {
+  font-size: var(--text-sm, 0.875rem);
+  color: var(--color-text-muted, #555);
+  font-weight: 500;
+}
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
 </style>
 </head>
 <body>
@@ -686,124 +629,27 @@ footer {
   <div id="success-screen">
     <div class="success-icon">✅</div>
     <h3>Спасибо за участие!</h3>
-    <p>Ваши ответы сохранены. Результаты помогут улучшить условия работы в университете.</p>
-    <!-- <div class="download-actions">
-      <button class="btn-dl" id="dl-csv-btn">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
-        Скачать ответ (CSV)
-      </button>
-      <button class="btn-dl btn-new" id="new-survey-btn">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8M3 3v5h5"/></svg>
-        Новый опрос
-      </button>
-    </div> -->
+    <p>Ваши ответы отправлены и сохранены. Результаты помогут улучшить условия работы в университете.</p>
+
   </div>
 
 </main>
 
-<!-- ADMIN PANEL -->
-<div id="admin-toggle-wrap">
-  <button class="btn-admin" id="admin-toggle-btn" title="Панель администратора">⚙ Результаты</button>
-</div>
-<div id="admin-panel">
-  <div class="admin-inner">
-    <h4>📊 Хранилище ответов (SQLite в браузере)</h4>
-    <span class="admin-stat" id="admin-count">Ответов: 0</span>
-    <button class="btn-admin-dl" id="admin-dl-all">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
-      Скачать всё (CSV)
-    </button>
-    <button class="btn-admin-dl" id="admin-dl-sqlite" style="background: var(--color-accent-dark);">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M3 15h18M9 3v18"/></svg>
-      Скачать SQLite (.db)
-    </button>
-    <button class="btn-admin-close" id="admin-close-btn" title="Закрыть">✕</button>
-  </div>
-</div>
 
 <footer>
   © 2026 Самарский национальный исследовательский университет имени академика С.П. Королёва.
 </footer>
 
-<!-- SQL.JS (SQLite in browser) -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.10.3/sql-wasm.js"></script>
 <script>
 /* ============================================================
    SURVEY APP — SSAU HR SURVEY
-   Storage: IndexedDB (SQLite via sql.js) + CSV per response
    ============================================================ */
 
-// ──────────────── SQLITE INIT ────────────────
-let db = null;
-let SQL = null;
+const GOOGLE_SHEETS_WEBAPP_URL = 'https://script.google.com/macros/s/AKfycbzN-tJI5hclQ7pSyFXs8t37TmtpmDNgU1o3yBsAeIBfx6Or2lrcNosbh7QsZBSVBqNV/exec';
 
-async function initDB() {
-  SQL = await initSqlJs({
-    locateFile: f => `https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.10.3/${f}`
-  });
-  // Try load from IndexedDB
-  const stored = await idbLoad('ssau_survey_db');
-  if (stored) {
-    db = new SQL.Database(new Uint8Array(stored));
-  } else {
-    db = new SQL.Database();
-  }
-  db.run(`CREATE TABLE IF NOT EXISTS responses (
-    id TEXT PRIMARY KEY,
-    ts TEXT,
-    q1 TEXT, q2 TEXT, q3 TEXT, q4 TEXT, q5 TEXT,
-    qa TEXT, qb TEXT, qc TEXT
-  )`);
-  updateAdminCount();
-}
 
-async function idbSave(key, data) {
-  return new Promise((res, rej) => {
-    const req = indexedDB.open('ssau_survey', 1);
-    req.onupgradeneeded = e => e.target.result.createObjectStore('kv');
-    req.onsuccess = e => {
-      const tx = e.target.result.transaction('kv', 'readwrite');
-      tx.objectStore('kv').put(data, key);
-      tx.oncomplete = () => res();
-      tx.onerror = rej;
-    };
-    req.onerror = rej;
-  });
-}
-
-async function idbLoad(key) {
-  return new Promise((res, rej) => {
-    const req = indexedDB.open('ssau_survey', 1);
-    req.onupgradeneeded = e => e.target.result.createObjectStore('kv');
-    req.onsuccess = e => {
-      const tx = e.target.result.transaction('kv', 'readonly');
-      const r = tx.objectStore('kv').get(key);
-      r.onsuccess = () => res(r.result);
-      r.onerror = rej;
-    };
-    req.onerror = rej;
-  });
-}
-
-async function saveDB() {
-  const data = db.export();
-  await idbSave('ssau_survey_db', data.buffer);
-}
-
-function updateAdminCount() {
-  if (!db) return;
-  const res = db.exec('SELECT COUNT(*) FROM responses');
-  const count = res[0]?.values[0][0] ?? 0;
-  document.getElementById('admin-count').textContent = `Ответов: ${count}`;
-}
 
 // ──────────────── FORM HELPERS ────────────────
-function sanitizeCSV(v) {
-  if (!v) return '';
-  const s = String(v).replace(/"/g, '""');
-  if (/[,"\n\r=+\-@|]/.test(s)) return `"${s}"`;
-  return s;
-}
 
 function generateID() {
   return 'resp_' + Date.now() + '_' + Math.random().toString(36).slice(2, 8);
@@ -922,47 +768,7 @@ function validateForm() {
   return ok;
 }
 
-// ──────────────── CSV GENERATION ────────────────
-function buildResponseCSV(data) {
-  const headers = ['id','timestamp','q1_kpi','q2_resources','q3_young_leaving','q4_career','q5_would_leave','qa_change','qb_barrier','qc_rector'];
-  const row = [
-    sanitizeCSV(data.id), sanitizeCSV(data.ts),
-    sanitizeCSV(data.q1), sanitizeCSV(data.q2), sanitizeCSV(data.q3),
-    sanitizeCSV(data.q4), sanitizeCSV(data.q5),
-    sanitizeCSV(data.qa), sanitizeCSV(data.qb), sanitizeCSV(data.qc)
-  ];
-  return headers.join(',') + '\n' + row.join(',');
-}
 
-function buildAllCSV() {
-  if (!db) return '';
-  const res = db.exec('SELECT id,ts,q1,q2,q3,q4,q5,qa,qb,qc FROM responses ORDER BY ts');
-  if (!res.length || !res[0].values.length) return 'Нет данных';
-  const headers = ['id','timestamp','q1_kpi','q2_resources','q3_young_leaving','q4_career','q5_would_leave','qa_change','qb_barrier','qc_rector'];
-  const rows = res[0].values.map(r => r.map(v => sanitizeCSV(v || '')).join(','));
-  return headers.join(',') + '\n' + rows.join('\n');
-}
-
-function downloadBlob(content, filename, mime) {
-  const blob = new Blob(['\uFEFF' + content], { type: mime });
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement('a');
-  a.href = url; a.download = filename; a.click();
-  setTimeout(() => URL.revokeObjectURL(url), 3000);
-}
-
-function downloadSQLite() {
-  if (!db) return;
-  const data = db.export();
-  const blob = new Blob([data], { type: 'application/octet-stream' });
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement('a');
-  a.href = url; a.download = 'ssau_survey_responses.db'; a.click();
-  setTimeout(() => URL.revokeObjectURL(url), 3000);
-}
-
-// ──────────────── LAST RESPONSE (for individual CSV download) ────────────────
-let lastResponse = null;
 
 // ──────────────── FORM SUBMIT ────────────────
 async function handleSubmit(e) {
@@ -986,19 +792,32 @@ async function handleSubmit(e) {
     qc: document.getElementById('qc-input').value.trim(),
   };
 
-  // Save to SQLite
-  if (db) {
-    db.run(
-      'INSERT INTO responses VALUES (?,?,?,?,?,?,?,?,?,?)',
-      [data.id, data.ts, data.q1, data.q2, data.q3, data.q4, data.q5, data.qa, data.qb, data.qc]
-    );
-    await saveDB();
-    updateAdminCount();
+  // ── показать лоудер ──
+  const loader = document.getElementById('loader-overlay');
+  const submitBtn = document.querySelector('.btn-submit');
+  loader.classList.add('active');
+  submitBtn.disabled = true;
+
+  try {
+    const resp = await fetch(GOOGLE_SHEETS_WEBAPP_URL, {
+      method: 'POST',
+      mode: 'cors',
+      headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+      body: JSON.stringify(data)
+    });
+    if (!resp.ok) throw new Error('HTTP ' + resp.status);
+  } catch (err) {
+    loader.classList.remove('active');
+    submitBtn.disabled = false;
+    alert('Не удалось отправить ответы в Google Sheets. Проверьте подключение к интернету и настройки Web App.');
+    return;
   }
 
-  lastResponse = data;
+  // ── скрыть лоудер после успеха ──
+  loader.classList.remove('active');
+  submitBtn.disabled = false;
 
-  // Show success
+
   document.getElementById('survey-form').style.display = 'none';
   const success = document.getElementById('success-screen');
   success.classList.add('visible');
@@ -1007,7 +826,6 @@ async function handleSubmit(e) {
 
 // ──────────────── INIT ────────────────
 document.addEventListener('DOMContentLoaded', async () => {
-  await initDB();
 
   // Setup interactions
   [1,2,3,4].forEach(n => {
@@ -1019,57 +837,19 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   document.getElementById('survey-form').addEventListener('submit', handleSubmit);
 
-  // Download individual CSV
-  document.getElementById('dl-csv-btn').addEventListener('click', () => {
-    if (!lastResponse) return;
-    const csv = buildResponseCSV(lastResponse);
-    downloadBlob(csv, `${lastResponse.id}.csv`, 'text/csv;charset=utf-8');
-  });
 
-  // New survey
-  document.getElementById('new-survey-btn').addEventListener('click', () => {
-    document.getElementById('success-screen').classList.remove('visible');
-    document.getElementById('survey-form').reset();
-    document.getElementById('survey-form').style.display = '';
-    // Clear visual states
-    document.querySelectorAll('.opt-item').forEach(el => el.classList.remove('selected'));
-    document.querySelectorAll('.opt-other-wrap').forEach(el => el.style.display = 'none');
-    document.querySelectorAll('.has-error').forEach(el => { el.classList.remove('has-error'); el.querySelector('.error-msg')?.remove(); });
-    calcProgress();
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
 
-  // Admin panel
-  document.getElementById('admin-toggle-btn').addEventListener('click', () => {
-    document.getElementById('admin-panel').classList.toggle('open');
-    updateAdminCount();
-  });
-  document.getElementById('admin-close-btn').addEventListener('click', () => {
-    document.getElementById('admin-panel').classList.remove('open');
-  });
-  document.getElementById('admin-dl-all').addEventListener('click', () => {
-    const csv = buildAllCSV();
-    const ts = new Date().toISOString().slice(0,10);
-    downloadBlob(csv, `ssau_survey_all_${ts}.csv`, 'text/csv;charset=utf-8');
-  });
-  document.getElementById('admin-dl-sqlite').addEventListener('click', downloadSQLite);
 
-  // === СЕКРЕТНЫЙ ADMIN URL ===
-  // Доступ: откройте файл с хэшем #admin-xK9p2mQr7vL4nZ8w
-  const ADMIN_SECRET = 'admin-xK9p2mQr7vL4nZ8w';
 
-  function checkAdminAccess() {
-    const hash = window.location.hash.replace('#', '');
-    if (hash === ADMIN_SECRET) {
-      document.getElementById('admin-toggle-wrap').classList.add('admin-unlocked');
-      // Убираем хэш из адресной строки сразу после проверки
-      history.replaceState(null, '', window.location.pathname + window.location.search);
-    }
-  }
-
-  checkAdminAccess();
-  window.addEventListener('hashchange', checkAdminAccess);
 });
 </script>
+
+<div id="loader-overlay" role="status" aria-live="polite" aria-label="Отправка данных">
+  <div class="loader-box">
+    <div class="loader-spinner"></div>
+    <span class="loader-text">Отправка ответов…</span>
+  </div>
+</div>
+
 </body>
 </html>
