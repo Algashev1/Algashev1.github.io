@@ -1,855 +1,1756 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru" data-theme="light">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Кадровая политика университета — Анонимный опрос</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400&family=PT+Serif:wght@400;700&display=swap" rel="stylesheet">
-<style>
-/* === SSAU-INSPIRED DESIGN SYSTEM === */
-:root {
-  --color-blue:         #003087;
-  --color-blue-mid:     #0050b3;
-  --color-blue-light:   #1a6fc4;
-  --color-blue-pale:    #e8f0fb;
-  --color-blue-border:  #c5d8f5;
-  --color-accent:       #d4a017;
-  --color-accent-dark:  #b08000;
-  --color-bg:           #f5f7fa;
-  --color-surface:      #ffffff;
-  --color-surface-2:    #f0f4f9;
-  --color-text:         #1a1c2e;
-  --color-text-muted:   #5a6080;
-  --color-text-faint:   #9ba3be;
-  --color-border:       #d6dded;
-  --color-divider:      #e5e9f4;
-  --color-error:        #c0392b;
-  --color-success:      #1a7a40;
-  --color-success-bg:   #eaf5ee;
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Кадровая политика университета — Анонимный опрос</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400&family=PT+Serif:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* === SSAU-INSPIRED DESIGN SYSTEM === */
+      :root {
+        --color-blue: #003087;
+        --color-blue-mid: #0050b3;
+        --color-blue-light: #1a6fc4;
+        --color-blue-pale: #e8f0fb;
+        --color-blue-border: #c5d8f5;
+        --color-accent: #d4a017;
+        --color-accent-dark: #b08000;
+        --color-bg: #f5f7fa;
+        --color-surface: #ffffff;
+        --color-surface-2: #f0f4f9;
+        --color-text: #1a1c2e;
+        --color-text-muted: #5a6080;
+        --color-text-faint: #9ba3be;
+        --color-border: #d6dded;
+        --color-divider: #e5e9f4;
+        --color-error: #c0392b;
+        --color-success: #1a7a40;
+        --color-success-bg: #eaf5ee;
 
-  --font-body:    'PT Sans', 'Segoe UI', sans-serif;
-  --font-display: 'PT Serif', Georgia, serif;
+        --font-body: "PT Sans", "Segoe UI", sans-serif;
+        --font-display: "PT Serif", Georgia, serif;
 
-  --text-xs:   clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
-  --text-sm:   clamp(0.875rem, 0.8rem + 0.35vw, 1rem);
-  --text-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
-  --text-lg:   clamp(1.125rem, 1rem + 0.75vw, 1.375rem);
-  --text-xl:   clamp(1.375rem, 1.2rem + 0.9vw, 1.75rem);
-  --text-2xl:  clamp(1.75rem, 1.4rem + 1.5vw, 2.5rem);
+        --text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+        --text-sm: clamp(0.875rem, 0.8rem + 0.35vw, 1rem);
+        --text-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+        --text-lg: clamp(1.125rem, 1rem + 0.75vw, 1.375rem);
+        --text-xl: clamp(1.375rem, 1.2rem + 0.9vw, 1.75rem);
+        --text-2xl: clamp(1.75rem, 1.4rem + 1.5vw, 2.5rem);
 
-  --space-1: 0.25rem; --space-2: 0.5rem; --space-3: 0.75rem;
-  --space-4: 1rem;    --space-5: 1.25rem; --space-6: 1.5rem;
-  --space-8: 2rem;    --space-10: 2.5rem; --space-12: 3rem;
-  --space-16: 4rem;
+        --space-1: 0.25rem;
+        --space-2: 0.5rem;
+        --space-3: 0.75rem;
+        --space-4: 1rem;
+        --space-5: 1.25rem;
+        --space-6: 1.5rem;
+        --space-8: 2rem;
+        --space-10: 2.5rem;
+        --space-12: 3rem;
+        --space-16: 4rem;
 
-  --radius-sm: 3px; --radius-md: 6px; --radius-lg: 10px;
-  --shadow-sm: 0 1px 3px rgba(0,30,100,0.07);
-  --shadow-md: 0 4px 14px rgba(0,30,100,0.10);
-  --shadow-lg: 0 8px 32px rgba(0,30,100,0.13);
-  --transition: 180ms cubic-bezier(0.16, 1, 0.3, 1);
-}
+        --radius-sm: 3px;
+        --radius-md: 6px;
+        --radius-lg: 10px;
+        --shadow-sm: 0 1px 3px rgba(0, 30, 100, 0.07);
+        --shadow-md: 0 4px 14px rgba(0, 30, 100, 0.1);
+        --shadow-lg: 0 8px 32px rgba(0, 30, 100, 0.13);
+        --transition: 180ms cubic-bezier(0.16, 1, 0.3, 1);
+      }
 
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
-body {
-  font-family: var(--font-body);
-  font-size: var(--text-base);
-  color: var(--color-text);
-  background: var(--color-bg);
-  min-height: 100dvh;
-  line-height: 1.65;
-}
-img { display: block; max-width: 100%; }
-button { cursor: pointer; font: inherit; }
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        scroll-behavior: smooth;
+        -webkit-font-smoothing: antialiased;
+      }
+      body {
+        font-family: var(--font-body);
+        font-size: var(--text-base);
+        color: var(--color-text);
+        background: var(--color-bg);
+        min-height: 100dvh;
+        line-height: 1.65;
+      }
+      img {
+        display: block;
+        max-width: 100%;
+      }
+      button {
+        cursor: pointer;
+        font: inherit;
+      }
 
-/* === HEADER === */
-.site-header {
-  background: var(--color-blue);
-  color: #fff;
-  border-bottom: 3px solid var(--color-accent);
-}
-.header-inner {
-  max-width: 960px;
-  margin: 0 auto;
-  padding: var(--space-4) var(--space-6);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: var(--space-4);
-}
-.logo-mark {
-  flex-shrink: 0;
-}
-.logo-mark img { height: 50px; width: auto; }
-.header-text h1 {
-  font-family: var(--font-display);
-  font-size: var(--text-lg);
-  font-weight: 700;
-  line-height: 1.2;
-  letter-spacing: -0.01em;
-}
-.header-text p {
-  font-size: var(--text-xs);
-  opacity: 0.78;
-  margin-top: 2px;
-  max-width: none;
-}
+      /* === HEADER === */
+      .site-header {
+        background: var(--color-blue);
+        color: #fff;
+        border-bottom: 3px solid var(--color-accent);
+      }
+      .header-inner {
+        max-width: 960px;
+        margin: 0 auto;
+        padding: var(--space-4) var(--space-6);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: var(--space-4);
+      }
+      .logo-mark {
+        flex-shrink: 0;
+      }
+      .logo-mark img {
+        height: 50px;
+        width: auto;
+      }
+      .header-text h1 {
+        font-family: var(--font-display);
+        font-size: var(--text-lg);
+        font-weight: 700;
+        line-height: 1.2;
+        letter-spacing: -0.01em;
+      }
+      .header-text p {
+        font-size: var(--text-xs);
+        opacity: 0.78;
+        margin-top: 2px;
+        max-width: none;
+      }
 
-/* === HERO BANNER === */
-.survey-hero {
-  background: linear-gradient(135deg, var(--color-blue) 0%, var(--color-blue-mid) 60%, var(--color-blue-light) 100%);
-  color: #fff;
-  padding: var(--space-10) var(--space-6);
-  text-align: center;
-}
-.survey-hero h2 {
-  font-family: var(--font-display);
-  font-size: var(--text-2xl);
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  margin-bottom: var(--space-3);
-}
-.survey-hero p {
-  font-size: var(--text-base);
-  opacity: 0.88;
-  max-width: 600px;
-  margin: 0 auto;
-}
-.anonymous-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-2);
-  background: rgba(255,255,255,0.15);
-  border: 1px solid rgba(255,255,255,0.25);
-  border-radius: var(--radius-lg);
-  padding: var(--space-1) var(--space-3);
-  font-size: var(--text-xs);
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.07em;
-  margin-bottom: var(--space-5);
-}
-.anonymous-badge::before {
-  content: "🔒";
-  font-size: 0.85em;
-}
+      /* === HERO BANNER === */
+      .survey-hero {
+        background: linear-gradient(
+          135deg,
+          var(--color-blue) 0%,
+          var(--color-blue-mid) 60%,
+          var(--color-blue-light) 100%
+        );
+        color: #fff;
+        padding: var(--space-10) var(--space-6);
+        text-align: center;
+      }
+      .survey-hero h2 {
+        font-family: var(--font-display);
+        font-size: var(--text-2xl);
+        font-weight: 700;
+        letter-spacing: -0.02em;
+        margin-bottom: var(--space-3);
+      }
+      .survey-hero p {
+        font-size: var(--text-base);
+        opacity: 0.88;
+        max-width: 600px;
+        margin: 0 auto;
+      }
+      .anonymous-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: var(--space-2);
+        background: rgba(255, 255, 255, 0.15);
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        border-radius: var(--radius-lg);
+        padding: var(--space-1) var(--space-3);
+        font-size: var(--text-xs);
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.07em;
+        margin-bottom: var(--space-5);
+      }
+      .anonymous-badge::before {
+        content: "🔒";
+        font-size: 0.85em;
+      }
 
-/* === MAIN LAYOUT === */
-.main-wrap {
-  max-width: 780px;
-  margin: 0 auto;
-  padding: var(--space-10) var(--space-6);
-}
+      /* === MAIN LAYOUT === */
+      .main-wrap {
+        max-width: 780px;
+        margin: 0 auto;
+        padding: var(--space-10) var(--space-6);
+      }
 
-/* === STICKY PROGRESS BAR === */
-.sticky-progress {
-  position: sticky;
-  top: 0;
-  z-index: 50;
-  background: rgba(255,255,255,0.96);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border-bottom: 1px solid var(--color-divider);
-  padding: var(--space-3) var(--space-6);
-  box-shadow: 0 2px 8px rgba(0,30,100,0.06);
-}
-.sticky-progress-inner {
-  max-width: 780px;
-  margin: 0 auto;
-}
-/* === PROGRESS === */
-.progress-block {
-  margin-bottom: var(--space-8);
-}
-.progress-labels {
-  display: flex;
-  justify-content: space-between;
-  font-size: var(--text-xs);
-  color: var(--color-text-muted);
-  margin-bottom: var(--space-2);
-}
-.progress-bar-wrap {
-  height: 6px;
-  background: var(--color-blue-border);
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-}
-.progress-bar-fill {
-  height: 100%;
-  background: linear-gradient(90deg, var(--color-blue-mid), var(--color-blue-light));
-  border-radius: var(--radius-lg);
-  transition: width 0.4s cubic-bezier(0.16,1,0.3,1);
-  width: 0%;
-}
+      /* === STICKY PROGRESS BAR === */
+      .sticky-progress {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        background: rgba(255, 255, 255, 0.96);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        border-bottom: 1px solid var(--color-divider);
+        padding: var(--space-3) var(--space-6);
+        box-shadow: 0 2px 8px rgba(0, 30, 100, 0.06);
+      }
+      .sticky-progress-inner {
+        max-width: 780px;
+        margin: 0 auto;
+      }
+      /* === PROGRESS === */
+      .progress-block {
+        margin-bottom: var(--space-8);
+      }
+      .progress-labels {
+        display: flex;
+        justify-content: space-between;
+        font-size: var(--text-xs);
+        color: var(--color-text-muted);
+        margin-bottom: var(--space-2);
+      }
+      .progress-bar-wrap {
+        height: 6px;
+        background: var(--color-blue-border);
+        border-radius: var(--radius-lg);
+        overflow: hidden;
+      }
+      .progress-bar-fill {
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          var(--color-blue-mid),
+          var(--color-blue-light)
+        );
+        border-radius: var(--radius-lg);
+        transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        width: 0%;
+      }
 
-/* === BLOCKS & CARDS === */
-.block-label {
-  font-family: var(--font-display);
-  font-size: var(--text-xl);
-  font-weight: 700;
-  color: var(--color-blue);
-  border-left: 4px solid var(--color-accent);
-  padding-left: var(--space-4);
-  margin-bottom: var(--space-6);
-  margin-top: var(--space-10);
-  line-height: 1.2;
-}
-.block-label:first-of-type { margin-top: 0; }
+      /* === BLOCKS & CARDS === */
+      .block-label {
+        font-family: var(--font-display);
+        font-size: var(--text-xl);
+        font-weight: 700;
+        color: var(--color-blue);
+        border-left: 4px solid var(--color-accent);
+        padding-left: var(--space-4);
+        margin-bottom: var(--space-6);
+        margin-top: var(--space-10);
+        line-height: 1.2;
+      }
+      .block-label:first-of-type {
+        margin-top: 0;
+      }
 
-.q-card {
-  background: var(--color-surface);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-lg);
-  padding: var(--space-6);
-  margin-bottom: var(--space-5);
-  box-shadow: var(--shadow-sm);
-  transition: box-shadow var(--transition);
-}
-.q-card:focus-within { box-shadow: var(--shadow-md); }
+      .q-card {
+        background: var(--color-surface);
+        border: 1px solid var(--color-border);
+        border-radius: var(--radius-lg);
+        padding: var(--space-6);
+        margin-bottom: var(--space-5);
+        box-shadow: var(--shadow-sm);
+        transition: box-shadow var(--transition);
+      }
+      .q-card:focus-within {
+        box-shadow: var(--shadow-md);
+      }
 
-.q-title {
-  font-family: var(--font-display);
-  font-size: var(--text-lg);
-  font-weight: 700;
-  color: var(--color-text);
-  margin-bottom: var(--space-1);
-  line-height: 1.35;
-}
-.q-subtitle {
-  font-size: var(--text-sm);
-  color: var(--color-text-muted);
-  margin-bottom: var(--space-5);
-}
-.q-hint {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-1);
-  font-size: var(--text-xs);
-  color: var(--color-blue-mid);
-  background: var(--color-blue-pale);
-  border-radius: var(--radius-sm);
-  padding: 2px var(--space-2);
-  margin-bottom: var(--space-4);
-  font-weight: 600;
-}
+      .q-title {
+        font-family: var(--font-display);
+        font-size: var(--text-lg);
+        font-weight: 700;
+        color: var(--color-text);
+        margin-bottom: var(--space-1);
+        line-height: 1.35;
+      }
+      .q-subtitle {
+        font-size: var(--text-sm);
+        color: var(--color-text-muted);
+        margin-bottom: var(--space-5);
+      }
+      .q-hint {
+        display: inline-flex;
+        align-items: center;
+        gap: var(--space-1);
+        font-size: var(--text-xs);
+        color: var(--color-blue-mid);
+        background: var(--color-blue-pale);
+        border-radius: var(--radius-sm);
+        padding: 2px var(--space-2);
+        margin-bottom: var(--space-4);
+        font-weight: 600;
+      }
 
-.opt-item.opt-disabled {
-  opacity: 0.38;
-  pointer-events: none;
-  background: var(--color-surface-2);
-  border-color: var(--color-divider);
-}
-.opt-item.opt-disabled .opt-label {
-  color: var(--color-text-faint);
-}
+      .opt-item.opt-disabled {
+        opacity: 0.38;
+        pointer-events: none;
+        background: var(--color-surface-2);
+        border-color: var(--color-divider);
+      }
+      .opt-item.opt-disabled .opt-label {
+        color: var(--color-text-faint);
+      }
 
-/* === CHECKBOXES & RADIOS === */
-.options-list { display: flex; flex-direction: column; gap: var(--space-3); }
-.opt-item {
-  display: flex;
-  align-items: flex-start;
-  gap: var(--space-3);
-  cursor: pointer;
-  padding: var(--space-3) var(--space-4);
-  border: 1.5px solid var(--color-border);
-  border-radius: var(--radius-md);
-  transition: border-color var(--transition), background var(--transition), box-shadow var(--transition);
-  user-select: none;
-}
-.opt-item:hover { border-color: var(--color-blue-light); background: var(--color-blue-pale); }
-.opt-item.selected {
-  border-color: var(--color-blue-mid);
-  background: var(--color-blue-pale);
-  box-shadow: 0 0 0 2px rgba(0,80,179,0.12);
-}
-.opt-item input[type="checkbox"],
-.opt-item input[type="radio"] {
-  width: 18px; height: 18px;
-  flex-shrink: 0; margin-top: 2px;
-  accent-color: var(--color-blue-mid);
-  cursor: pointer;
-}
-.opt-item .opt-label {
-  font-size: var(--text-base);
-  line-height: 1.5;
-  color: var(--color-text);
-}
+      /* === CHECKBOXES & RADIOS === */
+      .options-list {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-3);
+      }
+      .opt-item {
+        display: flex;
+        align-items: flex-start;
+        gap: var(--space-3);
+        cursor: pointer;
+        padding: var(--space-3) var(--space-4);
+        border: 1.5px solid var(--color-border);
+        border-radius: var(--radius-md);
+        transition:
+          border-color var(--transition),
+          background var(--transition),
+          box-shadow var(--transition);
+        user-select: none;
+      }
+      .opt-item:hover {
+        border-color: var(--color-blue-light);
+        background: var(--color-blue-pale);
+      }
+      .opt-item.selected {
+        border-color: var(--color-blue-mid);
+        background: var(--color-blue-pale);
+        box-shadow: 0 0 0 2px rgba(0, 80, 179, 0.12);
+      }
+      .opt-item input[type="checkbox"],
+      .opt-item input[type="radio"] {
+        width: 18px;
+        height: 18px;
+        flex-shrink: 0;
+        margin-top: 2px;
+        accent-color: var(--color-blue-mid);
+        cursor: pointer;
+      }
+      .opt-item .opt-label {
+        font-size: var(--text-base);
+        line-height: 1.5;
+        color: var(--color-text);
+      }
 
-/* Other input inside option */
-.opt-other-wrap { margin-top: var(--space-3); padding-left: 30px; }
-.opt-other-wrap input[type="text"] {
-  width: 100%;
-  padding: var(--space-2) var(--space-3);
-  border: 1.5px solid var(--color-border);
-  border-radius: var(--radius-md);
-  font: inherit; font-size: var(--text-sm);
-  color: var(--color-text);
-  background: var(--color-surface-2);
-  transition: border-color var(--transition);
-}
-.opt-other-wrap input[type="text"]:focus {
-  outline: none; border-color: var(--color-blue-mid);
-  background: var(--color-surface);
-}
+      /* Other input inside option */
+      .opt-other-wrap {
+        margin-top: var(--space-3);
+        padding-left: 30px;
+      }
+      .opt-other-wrap input[type="text"] {
+        width: 100%;
+        padding: var(--space-2) var(--space-3);
+        border: 1.5px solid var(--color-border);
+        border-radius: var(--radius-md);
+        font: inherit;
+        font-size: var(--text-sm);
+        color: var(--color-text);
+        background: var(--color-surface-2);
+        transition: border-color var(--transition);
+      }
+      .opt-other-wrap input[type="text"]:focus {
+        outline: none;
+        border-color: var(--color-blue-mid);
+        background: var(--color-surface);
+      }
 
-/* === TEXTAREAS === */
-.open-question textarea {
-  width: 100%;
-  min-height: 110px;
-  padding: var(--space-3) var(--space-4);
-  border: 1.5px solid var(--color-border);
-  border-radius: var(--radius-md);
-  font: inherit; font-size: var(--text-base);
-  color: var(--color-text);
-  background: var(--color-surface-2);
-  resize: vertical;
-  transition: border-color var(--transition), box-shadow var(--transition);
-  line-height: 1.6;
-}
-.open-question textarea:focus {
-  outline: none; border-color: var(--color-blue-mid);
-  box-shadow: 0 0 0 3px rgba(0,80,179,0.10);
-  background: var(--color-surface);
-}
-.open-question .placeholder-hint {
-  font-size: var(--text-xs);
-  color: var(--color-text-muted);
-  margin-top: var(--space-2);
-}
+      /* === TEXTAREAS === */
+      .open-question textarea {
+        width: 100%;
+        min-height: 110px;
+        padding: var(--space-3) var(--space-4);
+        border: 1.5px solid var(--color-border);
+        border-radius: var(--radius-md);
+        font: inherit;
+        font-size: var(--text-base);
+        color: var(--color-text);
+        background: var(--color-surface-2);
+        resize: vertical;
+        transition:
+          border-color var(--transition),
+          box-shadow var(--transition);
+        line-height: 1.6;
+      }
+      .open-question textarea:focus {
+        outline: none;
+        border-color: var(--color-blue-mid);
+        box-shadow: 0 0 0 3px rgba(0, 80, 179, 0.1);
+        background: var(--color-surface);
+      }
+      .open-question .placeholder-hint {
+        font-size: var(--text-xs);
+        color: var(--color-text-muted);
+        margin-top: var(--space-2);
+      }
 
-/* === SUBMIT SECTION === */
-.submit-section {
-  margin-top: var(--space-10);
-  text-align: center;
-}
-.btn-submit {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-2);
-  background: var(--color-blue);
-  color: #fff;
-  border: none;
-  border-radius: var(--radius-md);
-  padding: var(--space-4) var(--space-10);
-  font-size: var(--text-base);
-  font-weight: 700;
-  font-family: var(--font-body);
-  letter-spacing: 0.01em;
-  box-shadow: var(--shadow-md);
-  transition: background var(--transition), box-shadow var(--transition), transform var(--transition);
-}
-.btn-submit:hover { background: var(--color-blue-mid); box-shadow: var(--shadow-lg); }
-.btn-submit:active { transform: scale(0.98); }
-.btn-submit svg { flex-shrink: 0; }
-.submit-note {
-  font-size: var(--text-xs);
-  color: var(--color-text-muted);
-  margin-top: var(--space-3);
-}
+      /* === SUBMIT SECTION === */
+      .submit-section {
+        margin-top: var(--space-10);
+        text-align: center;
+      }
+      .btn-submit {
+        display: inline-flex;
+        align-items: center;
+        gap: var(--space-2);
+        background: var(--color-blue);
+        color: #fff;
+        border: none;
+        border-radius: var(--radius-md);
+        padding: var(--space-4) var(--space-10);
+        font-size: var(--text-base);
+        font-weight: 700;
+        font-family: var(--font-body);
+        letter-spacing: 0.01em;
+        box-shadow: var(--shadow-md);
+        transition:
+          background var(--transition),
+          box-shadow var(--transition),
+          transform var(--transition);
+      }
+      .btn-submit:hover {
+        background: var(--color-blue-mid);
+        box-shadow: var(--shadow-lg);
+      }
+      .btn-submit:active {
+        transform: scale(0.98);
+      }
+      .btn-submit svg {
+        flex-shrink: 0;
+      }
+      .submit-note {
+        font-size: var(--text-xs);
+        color: var(--color-text-muted);
+        margin-top: var(--space-3);
+      }
 
-/* === SUCCESS STATE === */
-#success-screen {
-  display: none;
-  background: var(--color-success-bg);
-  border: 2px solid var(--color-success);
-  border-radius: var(--radius-lg);
-  padding: var(--space-10) var(--space-8);
-  text-align: center;
-  margin-top: var(--space-8);
-}
-#success-screen.visible { display: block; animation: fadeIn 0.5s ease; }
-@keyframes fadeIn { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
-.success-icon { font-size: 3rem; margin-bottom: var(--space-4); }
-#success-screen h3 {
-  font-family: var(--font-display);
-  font-size: var(--text-xl);
-  color: var(--color-success);
-  margin-bottom: var(--space-2);
-}
-#success-screen p { font-size: var(--text-sm); color: var(--color-text-muted); }
+      /* === SUCCESS STATE === */
+      #success-screen {
+        display: none;
+        background: var(--color-success-bg);
+        border: 2px solid var(--color-success);
+        border-radius: var(--radius-lg);
+        padding: var(--space-10) var(--space-8);
+        text-align: center;
+        margin-top: var(--space-8);
+      }
+      #success-screen.visible {
+        display: block;
+        animation: fadeIn 0.5s ease;
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(12px);
+        }
+        to {
+          opacity: 1;
+          transform: none;
+        }
+      }
+      .success-icon {
+        font-size: 3rem;
+        margin-bottom: var(--space-4);
+      }
+      #success-screen h3 {
+        font-family: var(--font-display);
+        font-size: var(--text-xl);
+        color: var(--color-success);
+        margin-bottom: var(--space-2);
+      }
+      #success-screen p {
+        font-size: var(--text-sm);
+        color: var(--color-text-muted);
+      }
 
-/* === VALIDATION === */
-.q-card.has-error { border-color: var(--color-error); }
-.error-msg {
-  color: var(--color-error);
-  font-size: var(--text-xs);
-  margin-top: var(--space-2);
-  display: flex;
-  align-items: center;
-  gap: var(--space-1);
-}
+      /* === VALIDATION === */
+      .q-card.has-error {
+        border-color: var(--color-error);
+      }
+      .error-msg {
+        color: var(--color-error);
+        font-size: var(--text-xs);
+        margin-top: var(--space-2);
+        display: flex;
+        align-items: center;
+        gap: var(--space-1);
+      }
 
+      /* === FOOTER === */
+      footer {
+        background: var(--color-blue);
+        color: rgba(255, 255, 255, 0.6);
+        text-align: center;
+        padding: var(--space-6);
+        font-size: var(--text-xs);
+        margin-top: var(--space-16);
+      }
 
-/* === FOOTER === */
-footer {
-  background: var(--color-blue);
-  color: rgba(255,255,255,0.6);
-  text-align: center;
-  padding: var(--space-6);
-  font-size: var(--text-xs);
-  margin-top: var(--space-16);
-}
+      /* === RESPONSIVE === */
+      @media (max-width: 600px) {
+        .header-inner {
+          padding: var(--space-3) var(--space-4);
+          gap: var(--space-3);
+        }
+        .main-wrap {
+          padding: var(--space-6) var(--space-4);
+        }
+        .q-card {
+          padding: var(--space-4);
+        }
+        .survey-hero {
+          padding: var(--space-8) var(--space-4);
+        }
+        .block-label {
+          font-size: var(--text-lg);
+        }
+      }
 
-/* === RESPONSIVE === */
-@media (max-width: 600px) {
-  .header-inner { padding: var(--space-3) var(--space-4); gap: var(--space-3); }
-  .main-wrap { padding: var(--space-6) var(--space-4); }
-  .q-card { padding: var(--space-4); }
-  .survey-hero { padding: var(--space-8) var(--space-4); }
-  .block-label { font-size: var(--text-lg); }
-}
+      /* ── LOADER OVERLAY ── */
+      #loader-overlay {
+        display: none;
+        position: fixed;
+        inset: 0;
+        z-index: 9999;
+        background: rgba(0, 0, 0, 0.45);
+        backdrop-filter: blur(3px);
+        -webkit-backdrop-filter: blur(3px);
+        align-items: center;
+        justify-content: center;
+      }
+      #loader-overlay.active {
+        display: flex;
+        animation: fadeIn 0.2s ease;
+      }
+      .loader-box {
+        background: var(--color-card, #fff);
+        border-radius: var(--radius-lg, 0.75rem);
+        padding: 2rem 2.5rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        box-shadow: var(--shadow-lg);
+      }
+      .loader-spinner {
+        width: 48px;
+        height: 48px;
+        border: 4px solid rgba(0, 0, 0, 0.1);
+        border-top-color: var(--color-blue-mid, #3b6fd4);
+        border-radius: 50%;
+        animation: spin 0.8s linear infinite;
+      }
+      .loader-text {
+        font-size: var(--text-sm, 0.875rem);
+        color: var(--color-text-muted, #555);
+        font-weight: 500;
+      }
+      @keyframes spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header class="site-header">
+      <div class="header-inner">
+        <div class="logo-mark" aria-label="Самарский университет">
+          <img
+            src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzUzIiBoZWlnaHQ9IjEwNSIgdmlld0JveD0iMCAwIDM1MyAxMDUiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Ik0xMDkuNDA0IDMxLjUwNDJDMTExLjY0OSAzMS41MDQyIDExNC41NTYgMzEuODQ5NyAxMTYuMzg3IDMyLjM2ODhMMTE1LjMxNSAzNy4yNzY5QzExNC4xMzkgMzYuODYxNiAxMTIuMSAzNi42MiAxMTAuNTggMzYuNjJDMTA1Ljc0IDM2LjYyIDEwMy45NDMgMzcuMzEwOSAxMDMuOTQzIDQzLjk4MjJDMTAzLjk0MyA1MC42MTk0IDEwNS43NCA1MS41MTggMTEwLjU4IDUxLjUxOEMxMTIuMSA1MS41MTggMTE0LjEzOSA1MS4yNDA1IDExNS4zMTUgNTAuODYxMUwxMTYuMzg3IDU1Ljg3M0MxMTQuNTIgNTYuMzU2MyAxMTEuNjQ5IDU2LjY2NzggMTA5LjQwNCA1Ni42Njc4QzEwMS42NjEgNTYuNjY3OCA5Ny45OTY2IDUzLjcyODUgOTcuOTk2NiA0My45MTIzQzk3Ljk5NjYgMzQuMDYyMSAxMDEuNjYxIDMxLjUwNDIgMTA5LjQwNCAzMS41MDQyWiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZD0iTTEzMC43NDggMzYuOTMxNEMxMjkuODE2IDM5LjQ1MzQgMTI4LjcwOSA0Mi43MDQxIDEyNy42MDMgNDYuMDU2N0gxMzQuNTE2QzEzMy40MSA0Mi43NzIgMTMyLjM3MiAzOS40ODc0IDEzMS42NDkgMzYuOTMxNEgxMzAuNzQ4Wk0xMzYuMTA2IDUwLjg2MUgxMjYuMTg0QzEyNS41NjQgNTIuODY1OCAxMjUuMDQ1IDU0LjY5NjkgMTI0LjYzIDU2LjE4NDRIMTE4LjY4NEMxMjAuNjkgNDkuNDQzMyAxMjQuNDU4IDM4Ljg2NjMgMTI3LjIyNCAzMi4wOTMxSDEzNS44MjhDMTM4LjExIDM5LjYyNyAxNDEuNzA2IDQ5Ljg5MjYgMTQ0LjI5OCA1Ni4xODQ0SDEzOC4xNDRDMTM3LjU1NyA1NC43NjY3IDEzNi44MzIgNTIuODk5NyAxMzYuMTA2IDUwLjg2MVoiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik0xNjcuMzQ5IDMyLjA5MjNIMTc0LjQ2OFY1Ni4xODM2SDE2OS4wNzhWMzkuOTAzN0MxNjcuMjQ1IDQzLjk0NzMgMTY0LjcxOSA1MC4xMDEzIDE2My4xMzIgNTQuMTc4OEgxNTguNzA3QzE1Ny4xODcgNTAuMTY5MiAxNTQuODAzIDQzLjc3MzYgMTUzLjA3NCAzOS45MDM3VjU2LjE4MzZIMTQ3LjY4MVYzMi4wOTIzSDE1NS4xNDdDMTU3LjE1MSAzNi4xMDE4IDE1OS41MzYgNDEuNjY2OSAxNjEuMzM1IDQ2LjE5NTZDMTYzLjA2MiA0MS42MzI5IDE2NS40NDYgMzYuMDY1OSAxNjcuMzQ5IDMyLjA5MjNaIiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBkPSJNMTkwLjE1MyAzNi45MzE0QzE4OS4yMiAzOS40NTM0IDE4OC4xMTQgNDIuNzA0MSAxODcuMDA4IDQ2LjA1NjdIMTkzLjkyMUMxOTIuODE1IDQyLjc3MiAxOTEuNzc0IDM5LjQ4NzQgMTkxLjA1MSAzNi45MzE0SDE5MC4xNTNaTTE5NS41MSA1MC44NjFIMTg1LjU4OEMxODQuOTY3IDUyLjg2NTggMTg0LjQ1IDU0LjY5NjkgMTg0LjAzMyA1Ni4xODQ0SDE3OC4wODhDMTgwLjA5NSA0OS40NDMzIDE4My44NjEgMzguODY2MyAxODYuNjI3IDMyLjA5MzFIMTk1LjIzM0MxOTcuNTE1IDM5LjYyNyAyMDEuMTExIDQ5Ljg5MjYgMjAzLjcwMyA1Ni4xODQ0SDE5Ny41NDlDMTk2Ljk2MiA1NC43NjY3IDE5Ni4yMzcgNTIuODk5NyAxOTUuNTEgNTAuODYxWiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZD0iTTIxOC41OTQgNDQuMDg2QzIyMC4wNDggNDQuMDg2IDIyMS4wMTQgNDMuMDgzNiAyMjEuMDE0IDQwLjU1OTdDMjIxLjAxNCAzNy45MzM5IDIyMC4xODUgMzYuODYxNyAyMTguNjY0IDM2Ljg2MTdIMjEyLjY1MVY0NC4wODZIMjE4LjU5NFpNMjA3LjA4MyA1Ni4xODQ1VjMyLjA5MTNIMjIwLjUyOUMyMjUuNDc1IDMyLjA5MTMgMjI3LjEzMiAzNS42MTc2IDIyNy4xMzIgNDAuNTU5N0MyMjcuMTMyIDQ0LjkxNDcgMjI1LjA1OCA0OC42ODQ2IDIyMC41NjcgNDguNjg0NkgyMTIuNjUxVjU2LjE4NDVIMjA3LjA4M1oiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik0yNDEuODQzIDMxLjUwNDJDMjQ0LjA5IDMxLjUwNDIgMjQ2Ljk5MyAzMS44NDk3IDI0OC44MjQgMzIuMzY4OEwyNDcuNzU2IDM3LjI3NjlDMjQ2LjU4IDM2Ljg2MTYgMjQ0LjU0MSAzNi42MiAyNDMuMDE3IDM2LjYyQzIzOC4xODEgMzYuNjIgMjM2LjM4IDM3LjMxMDkgMjM2LjM4IDQzLjk4MjJDMjM2LjM4IDUwLjYxOTQgMjM4LjE4MSA1MS41MTggMjQzLjAxNyA1MS41MThDMjQ0LjU0MSA1MS41MTggMjQ2LjU4IDUxLjI0MDUgMjQ3Ljc1NiA1MC44NjExTDI0OC44MjQgNTUuODczQzI0Ni45NTkgNTYuMzU2MyAyNDQuMDkgNTYuNjY3OCAyNDEuODQzIDU2LjY2NzhDMjM0LjEgNTYuNjY3OCAyMzAuNDM4IDUzLjcyODUgMjMwLjQzOCA0My45MTIzQzIzMC40MzggMzQuMDYyMSAyMzQuMSAzMS41MDQyIDI0MS44NDMgMzEuNTA0MloiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik0yNjcuNTkzIDU2LjE4MzlDMjY0LjUxNiA0Ny4zMzYxIDI2Mi4yMzMgNDUuMzY1MyAyNTguNDMxIDQ0Ljk1VjU2LjE4MzlIMjUyLjg2OFYzMi4wOTI2SDI1OC40MzFWNDMuNjM2MUMyNjAuMzY4IDQxLjQ5MzUgMjYzLjg1OSAzNy4wNzA2IDI2Ni45MzQgMzIuMDkyNkgyNzMuNTcxQzI2OS41NjMgMzguMzE0NiAyNjYuNzY0IDQxLjkwODkgMjY1LjY5MiA0Mi45MTEyQzI2OC4yNTEgNDMuODc3OCAyNzAuNzAyIDQ1LjcxMDggMjc0LjE5NCA1Ni4xODM5SDI2Ny41OTNaIiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBkPSJNMjk5Ljc1MyA1Ni4xODM5SDI5NC4yNTZWNDAuMzE3NUMyOTEuNDIgNDUuNjc2OCAyODguMzA5IDUxLjEzOCAyODUuMiA1Ni4xODM5SDI3Ny45MDhWMzIuMDkyNkgyODMuMzY3VjQ4LjYxNDFDMjg2LjY4NiA0My4xODY4IDI4OS45NjggMzcuNTg3OCAyOTIuOTQ0IDMyLjA5MjZIMjk5Ljc1M1Y1Ni4xODM5WiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZD0iTTMxNC41NDUgMjYuMDc2OUMzMTQuNTQ1IDI3LjU2NDQgMzE1LjIzOCAyNy44NzQgMzE2LjYyMSAyNy44NzRDMzE3Ljk2NSAyNy44NzQgMzE4LjY5MiAyNy41NjQ0IDMxOC42OTIgMjYuMDc2OUgzMjEuOTQxQzMyMS45NDEgMjkuNDY1NCAzMTkuOTcyIDMxLjAyMDkgMzE2LjQ4IDMxLjAyMDlDMzEzLjA5MSAzMS4wMjA5IDMxMS4wNTMgMjkuNDY1NCAzMTEuMDUzIDI2LjA3NjlIMzE0LjU0NVpNMzI3LjUwOCA1Ni4xODQ0SDMyMi4wMTFWNDAuMzE4QzMxOS4xNzYgNDUuNjc1NCAzMTYuMDY4IDUxLjEzNjYgMzEyLjk1NSA1Ni4xODQ0SDMwNS42NjNWMzIuMDkzMUgzMTEuMTI0VjQ4LjYxMjdDMzE0LjQ0MSA0My4xODczIDMxNy43MjggMzcuNTg4MyAzMjAuNjk5IDMyLjA5MzFIMzI3LjUwOFY1Ni4xODQ0WiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZD0iTTExMi45OTkgNzIuMjI1MkgxMTYuODcxQzExMy43MjYgODAuMjQ0MyAxMDguODUyIDg5Ljk5MjUgMTA0Ljg3NiA5Ni4zMTg0SDEwMC41NTVDMTAxLjc5OSA5NC42NTkgMTAzLjM1NSA5Mi4zMDg4IDEwNC40NjEgOTAuMzM4QzEwMi45NzMgODUuODQzMyA5OC44NjM3IDc2Ljk5NTUgOTUuOTU4NSA3Mi4yMjUySDEwMC4wNzJDMTAyLjI0OCA3Ni4wOTY5IDEwNC45NDYgODEuNzI5OSAxMDYuNjcxIDg2LjUzNjFDMTA5LjA1OCA4MS43NjU4IDExMS42MTcgNzYuMzA0NiAxMTIuOTk5IDcyLjIyNTIiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik0xMjQuNjggOTYuMzE3OEgxMjEuMTg4VjcyLjIyNDZIMTI0LjY4VjgxLjg2OTFIMTM2LjIyM1Y3Mi4yMjQ2SDEzOS43MTZWOTYuMzE3OEgxMzYuMjIzVjg1LjA4MzlIMTI0LjY4Vjk2LjMxNzhaIiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBkPSJNMTY1Ljc1NiA5Ni4zMTc4SDE2Mi4yOThWNzcuMzc2MkMxNTguODA4IDgzLjczNiAxNTQuOTAyIDkwLjQwNzMgMTUwLjk5OCA5Ni4zMTc4SDE0Ni4zM1Y3Mi4yMjQ2SDE0OS43ODhWOTIuMDMwOEMxNTQuMDAxIDg1LjQ2MzMgMTU3Ljk3OSA3OC43NTgxIDE2MS41MDUgNzIuMjI0NkgxNjUuNzU2Vjk2LjMxNzhaIiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBkPSJNMTg0LjQxNiA5My4zNDQzQzE4Ni41MjQgOTMuMzQ0MyAxODcuMjg1IDkxLjc4ODggMTg3LjI4NSA4OS4zMDA3QzE4Ny4yODUgODYuNzA3IDE4Ni4zNTEgODQuOTc5NyAxODQuMjc2IDg0Ljk3OTdIMTc1Ljg3OFY5My4zNDQzSDE4NC40MTZaTTE3NS44NzggODIuMTEwM0gxODQuMTRDMTg2LjE0NSA4Mi4xMTAzIDE4Ni43NjQgODAuNTU2NyAxODYuNzY0IDc4LjU4NTlDMTg2Ljc2NCA3Ni40MDc1IDE4Ni4xNzkgNzUuMTk3NCAxODQuMTQgNzUuMTk3NEgxNzUuODc4VjgyLjExMDNaTTE5MS4wNTMgODkuNjEwM0MxOTEuMDUzIDk0LjIwODkgMTg4LjgwNSA5Ni4zMTc1IDE4NC45MzMgOTYuMzE3NUgxNzIuMzg1VjcyLjIyNDNIMTg0LjY1N0MxODkuNDY0IDcyLjIyNDMgMTkwLjQ2NCA3NC42NzgzIDE5MC40NjQgNzcuOTYzQzE5MC40NjQgODAuOTcwMSAxODkuODc3IDgzLjA3ODcgMTg1LjU5MiA4My40NjAxQzE5MC4xNTMgODMuNjY1OCAxOTEuMDUzIDg2LjE1MzkgMTkxLjA1MyA4OS42MTAzWiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZD0iTTIxMy43NDggNzIuMjI1MlY3NS4yMzIzSDIwMC4yNjZWODIuMDc3M0gyMDkuODQyVjg1LjA0ODZIMjAwLjI2NlY5My4zMDkzSDIxMy43NDhWOTYuMzE4NEgxOTYuNzc1VjcyLjIyNTJIMjEzLjc0OFoiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik0yMjkuNzE0IDg0LjkxMDJDMjMyLjEgODQuOTEwMiAyMzMuMjc2IDgzLjE0NzEgMjMzLjI3NiA4MC4yNDM3QzIzMy4yNzYgNzYuOTk0OSAyMzIuMSA3NS4xOTc4IDIyOS44NTIgNzUuMTk3OEgyMjIuMjQ4Vjg0LjkxMDJIMjI5LjcxNFpNMjE4LjcyNCA5Ni4zMTc4VjcyLjIyNDZIMjMwLjM3MUMyMzUuNTkxIDcyLjIyNDYgMjM3LjE0OCA3NS44NTQ3IDIzNy4xNDggODAuMjc5NkMyMzcuMTQ4IDg0LjIxOTMgMjM1LjMxNSA4Ny45MTc0IDIzMC41MTEgODcuOTE3NEgyMjIuMjQ4Vjk2LjMxNzhIMjE4LjcyNFoiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik0yNTIuMzQyIDcxLjYzNjlDMjU0LjUxOCA3MS42MzY5IDI1Ny4zMiA3Mi4wMTgyIDI1OS4xNTEgNzIuNTM3NEwyNTguMjg0IDc1LjY4MjNDMjU2LjkwMyA3NS4xNjMyIDI1NC41MTggNzQuODUxNyAyNTIuNzU1IDc0Ljg1MTdDMjQ3LjA4OCA3NC44NTE3IDI0NC45OCA3NS45NTggMjQ0Ljk4IDg0LjA4MDlDMjQ0Ljk4IDkyLjE2OTkgMjQ3LjA4OCA5My41NTE3IDI1Mi43NTUgOTMuNTUxN0MyNTQuNTE4IDkzLjU1MTcgMjU2LjkwMyA5My4yNDAyIDI1OC4yODQgOTIuNzU2OUwyNTkuMTUxIDk1LjkwMTlDMjU3LjI4NCA5Ni40NTUgMjU0LjUxOCA5Ni44MDA1IDI1Mi4zNDIgOTYuODAwNUMyNDQuNzcyIDk2LjgwMDUgMjQxLjE3OCA5My44NjMyIDI0MS4xNzggODQuMDQ2OUMyNDEuMTc4IDc0LjE5NDggMjQ0Ljc3MiA3MS42MzY5IDI1Mi4zNDIgNzEuNjM2OVoiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik0yODMuMzk3IDk2LjMxNzhIMjc5LjkzOVY3Ny4zNzYyQzI3Ni40NDYgODMuNzM2IDI3Mi41NDIgOTAuNDA3MyAyNjguNjM5IDk2LjMxNzhIMjYzLjk3VjcyLjIyNDZIMjY3LjQyN1Y5Mi4wMzA4QzI3MS42NDIgODUuNDYzMyAyNzUuNjE4IDc4Ljc1ODEgMjc5LjE0NiA3Mi4yMjQ2SDI4My4zOTdWOTYuMzE3OFoiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik0yOTYuMjEzIDk2LjMxNzhWNzUuMjMxOEgyODcuOTU0VjcyLjIyNDZIMzA4Vjc1LjIzMThIMjk5Ljc3NVY5Ni4zMTc4SDI5Ni4yMTNaIiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBkPSJNMzI5LjUzMiA3Mi4yMjUyVjc1LjIzMjNIMzE2LjA1MlY4Mi4wNzczSDMyNS42MjhWODUuMDQ4NkgzMTYuMDUyVjkzLjMwOTNIMzI5LjUzMlY5Ni4zMTg0SDMxMi41NjJWNzIuMjI1MkgzMjkuNTMyWiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZD0iTTM0MS4yMTMgOTYuMzE3OFY3NS4yMzE4SDMzMi45NVY3Mi4yMjQ2SDM1M1Y3NS4yMzE4SDM0NC43NzFWOTYuMzE3OEgzNDEuMjEzWiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0zNi4xMTgxIDY0LjYxMTZDMzYuMTE4MSA2NC4zOTI2IDM1Ljk0MDYgNjQuMjEzMyAzNS43MjE3IDY0LjIxMTRDMjAuMzg5NSA2My45OTYyIDguMDI2NjYgNTEuNTAzMiA4LjAyNjY2IDM2LjEyQzguMDI2NjYgMjAuNzM0OSAyMC4zODk1IDguMjQxODcgMzUuNzIxNyA4LjAyODU2QzM1Ljk0MDYgOC4wMjQ3OCAzNi4xMTgxIDcuODQ3MzMgMzYuMTE4MSA3LjYyNjQ3VjAuNDAyMDkyQzM2LjExODEgMC4yOTQ0OTEgMzYuMDc2NiAwLjE5MjU1MiAzNS45OTkyIDAuMTE3MDQyQzM1LjkyMTggMC4wNDE1MzI2IDM1LjgxOTggMS43OTUxZS0wNiAzNS43MTIyIDEuNzk1MWUtMDZDMTUuOTUxNCAwLjIyMDg2NyAwIDE2LjMwNjMgMCAzNi4xMkMwIDU1LjkzMTggMTUuOTUxNCA3Mi4wMTcyIDM1LjcxMjIgNzIuMjM4MUMzNS44MTk4IDcyLjI0IDM1LjkyMTggNzIuMTk2NiAzNS45OTkyIDcyLjEyMjlDMzYuMDc2NiA3Mi4wNDU1IDM2LjExODEgNzEuOTQzNiAzNi4xMTgxIDcxLjgzNlY2NC42MTE2WiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0zNi4xMjE2IDk2LjcxNjhDMzYuMTIxNiA5Ni40OTc5IDM2LjI5OSA5Ni4zMTg1IDM2LjUxOCA5Ni4zMTY2QzUxLjg1MDIgOTYuMTAxNCA2NC4yMTMgODMuNjA4NCA2NC4yMTMgNjguMjI1MkM2NC4yMTMgNTIuODQwMSA1MS44NTAyIDQwLjM0NzEgMzYuNTE4IDQwLjEzMzhDMzYuMjk5IDQwLjEzIDM2LjEyMTYgMzkuOTUyNSAzNi4xMjE2IDM5LjczMTdWMzIuNTA5MkMzNi4xMjE2IDMyLjQwMTYgMzYuMTYzMSAzMi4yOTc4IDM2LjI0MDUgMzIuMjIyMkMzNi4zMTc5IDMyLjE0NjcgMzYuNDE5OCAzMi4xMDUyIDM2LjUyNzQgMzIuMTA3MUM1Ni4yODgzIDMyLjMyNjEgNzIuMjM5NyA0OC40MTE1IDcyLjIzOTcgNjguMjI1MkM3Mi4yMzk3IDg4LjAzNyA1Ni4yODgzIDEwNC4xMjQgMzYuNTI3NCAxMDQuMzQzQzM2LjQxOTggMTA0LjM0NSAzNi4zMTc5IDEwNC4zMDQgMzYuMjQwNSAxMDQuMjI4QzM2LjE2MzEgMTA0LjE1MSAzNi4xMjE2IDEwNC4wNDkgMzYuMTIxNiAxMDMuOTQxVjk2LjcxNjhaIiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTM2LjExNzUgNTYuMTg0OEM0Mi43NjQyIDU2LjE4NDggNDguMTU5NCA2MS41NzQzIDQ4LjE1OTQgNjguMjI0OEM0OC4xNTk0IDc0Ljc0NTEgNDIuOTc5NCA4MC4wNTE1IDM2LjUxMiA4MC4yNTczQzM2LjI5NSA4MC4yNjQ4IDM2LjEyMzIgODAuNDQyMyAzNi4xMjMyIDgwLjY1OTRWODcuODgzN0MzNi4xMjMyIDg3Ljk5MzIgMzYuMTY0NyA4OC4wOTUyIDM2LjI0MjEgODguMTcwN0MzNi4zMTk1IDg4LjI0NjIgMzYuNDI1MiA4OC4yODc3IDM2LjUzMjggODguMjg1OEM0Ny40MjUxIDg4LjA2NjggNTYuMTg2IDc5LjE2OTkgNTYuMTg2IDY4LjIyNDhDNTYuMTg2IDU3LjE0MTkgNDcuMjAwNCA0OC4xNjAxIDM2LjExNzUgNDguMTYwMUMyOS40NzA4IDQ4LjE1ODIgMjQuMDc5NCA0Mi43NzA2IDI0LjA3OTQgMzYuMTIwMUMyNC4wNzk0IDI5LjU5OTggMjkuMjYxMiAyNC4yOTE1IDM1LjcyODYgMjQuMDg1N0MzNS45NDU3IDI0LjA3ODIgMzYuMTE3NSAyMy45MDA3IDM2LjExNzUgMjMuNjg1NVYxNi40NTkzQzM2LjExNzUgMTYuMzQ5OCAzNi4wNzQxIDE2LjI0NzggMzUuOTk4NiAxNi4xNzIzQzM1LjkyMTIgMTYuMDk2OCAzNS44MTU1IDE2LjA1NTMgMzUuNzA3OSAxNi4wNTcyQzI0LjgxNTYgMTYuMjc2MiAxNi4wNTI3IDI1LjE3MzEgMTYuMDUyNyAzNi4xMjAxQzE2LjA1MjcgNDcuMjAzIDI1LjAzNjUgNTYuMTg0OCAzNi4xMTc1IDU2LjE4NDhaIiBmaWxsPSJ3aGl0ZSIvPgo8L3N2Zz4K"
+            alt="Самарский университет"
+            width="200"
+            height="60"
+            loading="eager"
+            style="height: 50px; width: auto"
+          />
+        </div>
+      </div>
+    </header>
 
-/* ── LOADER OVERLAY ── */
-#loader-overlay {
-  display: none;
-  position: fixed;
-  inset: 0;
-  z-index: 9999;
-  background: rgba(0, 0, 0, 0.45);
-  backdrop-filter: blur(3px);
-  -webkit-backdrop-filter: blur(3px);
-  align-items: center;
-  justify-content: center;
-}
-#loader-overlay.active {
-  display: flex;
-  animation: fadeIn 0.2s ease;
-}
-.loader-box {
-  background: var(--color-card, #fff);
-  border-radius: var(--radius-lg, 0.75rem);
-  padding: 2rem 2.5rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
-  box-shadow: var(--shadow-lg);
-}
-.loader-spinner {
-  width: 48px;
-  height: 48px;
-  border: 4px solid rgba(0, 0, 0, 0.1);
-  border-top-color: var(--color-blue-mid, #3b6fd4);
-  border-radius: 50%;
-  animation: spin 0.8s linear infinite;
-}
-.loader-text {
-  font-size: var(--text-sm, 0.875rem);
-  color: var(--color-text-muted, #555);
-  font-weight: 500;
-}
-@keyframes spin {
-  to { transform: rotate(360deg); }
-}
-
-</style>
-</head>
-<body>
-
-<!-- HEADER -->
-<header class="site-header">
-  <div class="header-inner">
-    <div class="logo-mark" aria-label="Самарский университет">
-      <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzUzIiBoZWlnaHQ9IjEwNSIgdmlld0JveD0iMCAwIDM1MyAxMDUiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Ik0xMDkuNDA0IDMxLjUwNDJDMTExLjY0OSAzMS41MDQyIDExNC41NTYgMzEuODQ5NyAxMTYuMzg3IDMyLjM2ODhMMTE1LjMxNSAzNy4yNzY5QzExNC4xMzkgMzYuODYxNiAxMTIuMSAzNi42MiAxMTAuNTggMzYuNjJDMTA1Ljc0IDM2LjYyIDEwMy45NDMgMzcuMzEwOSAxMDMuOTQzIDQzLjk4MjJDMTAzLjk0MyA1MC42MTk0IDEwNS43NCA1MS41MTggMTEwLjU4IDUxLjUxOEMxMTIuMSA1MS41MTggMTE0LjEzOSA1MS4yNDA1IDExNS4zMTUgNTAuODYxMUwxMTYuMzg3IDU1Ljg3M0MxMTQuNTIgNTYuMzU2MyAxMTEuNjQ5IDU2LjY2NzggMTA5LjQwNCA1Ni42Njc4QzEwMS42NjEgNTYuNjY3OCA5Ny45OTY2IDUzLjcyODUgOTcuOTk2NiA0My45MTIzQzk3Ljk5NjYgMzQuMDYyMSAxMDEuNjYxIDMxLjUwNDIgMTA5LjQwNCAzMS41MDQyWiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZD0iTTEzMC43NDggMzYuOTMxNEMxMjkuODE2IDM5LjQ1MzQgMTI4LjcwOSA0Mi43MDQxIDEyNy42MDMgNDYuMDU2N0gxMzQuNTE2QzEzMy40MSA0Mi43NzIgMTMyLjM3MiAzOS40ODc0IDEzMS42NDkgMzYuOTMxNEgxMzAuNzQ4Wk0xMzYuMTA2IDUwLjg2MUgxMjYuMTg0QzEyNS41NjQgNTIuODY1OCAxMjUuMDQ1IDU0LjY5NjkgMTI0LjYzIDU2LjE4NDRIMTE4LjY4NEMxMjAuNjkgNDkuNDQzMyAxMjQuNDU4IDM4Ljg2NjMgMTI3LjIyNCAzMi4wOTMxSDEzNS44MjhDMTM4LjExIDM5LjYyNyAxNDEuNzA2IDQ5Ljg5MjYgMTQ0LjI5OCA1Ni4xODQ0SDEzOC4xNDRDMTM3LjU1NyA1NC43NjY3IDEzNi44MzIgNTIuODk5NyAxMzYuMTA2IDUwLjg2MVoiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik0xNjcuMzQ5IDMyLjA5MjNIMTc0LjQ2OFY1Ni4xODM2SDE2OS4wNzhWMzkuOTAzN0MxNjcuMjQ1IDQzLjk0NzMgMTY0LjcxOSA1MC4xMDEzIDE2My4xMzIgNTQuMTc4OEgxNTguNzA3QzE1Ny4xODcgNTAuMTY5MiAxNTQuODAzIDQzLjc3MzYgMTUzLjA3NCAzOS45MDM3VjU2LjE4MzZIMTQ3LjY4MVYzMi4wOTIzSDE1NS4xNDdDMTU3LjE1MSAzNi4xMDE4IDE1OS41MzYgNDEuNjY2OSAxNjEuMzM1IDQ2LjE5NTZDMTYzLjA2MiA0MS42MzI5IDE2NS40NDYgMzYuMDY1OSAxNjcuMzQ5IDMyLjA5MjNaIiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBkPSJNMTkwLjE1MyAzNi45MzE0QzE4OS4yMiAzOS40NTM0IDE4OC4xMTQgNDIuNzA0MSAxODcuMDA4IDQ2LjA1NjdIMTkzLjkyMUMxOTIuODE1IDQyLjc3MiAxOTEuNzc0IDM5LjQ4NzQgMTkxLjA1MSAzNi45MzE0SDE5MC4xNTNaTTE5NS41MSA1MC44NjFIMTg1LjU4OEMxODQuOTY3IDUyLjg2NTggMTg0LjQ1IDU0LjY5NjkgMTg0LjAzMyA1Ni4xODQ0SDE3OC4wODhDMTgwLjA5NSA0OS40NDMzIDE4My44NjEgMzguODY2MyAxODYuNjI3IDMyLjA5MzFIMTk1LjIzM0MxOTcuNTE1IDM5LjYyNyAyMDEuMTExIDQ5Ljg5MjYgMjAzLjcwMyA1Ni4xODQ0SDE5Ny41NDlDMTk2Ljk2MiA1NC43NjY3IDE5Ni4yMzcgNTIuODk5NyAxOTUuNTEgNTAuODYxWiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZD0iTTIxOC41OTQgNDQuMDg2QzIyMC4wNDggNDQuMDg2IDIyMS4wMTQgNDMuMDgzNiAyMjEuMDE0IDQwLjU1OTdDMjIxLjAxNCAzNy45MzM5IDIyMC4xODUgMzYuODYxNyAyMTguNjY0IDM2Ljg2MTdIMjEyLjY1MVY0NC4wODZIMjE4LjU5NFpNMjA3LjA4MyA1Ni4xODQ1VjMyLjA5MTNIMjIwLjUyOUMyMjUuNDc1IDMyLjA5MTMgMjI3LjEzMiAzNS42MTc2IDIyNy4xMzIgNDAuNTU5N0MyMjcuMTMyIDQ0LjkxNDcgMjI1LjA1OCA0OC42ODQ2IDIyMC41NjcgNDguNjg0NkgyMTIuNjUxVjU2LjE4NDVIMjA3LjA4M1oiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik0yNDEuODQzIDMxLjUwNDJDMjQ0LjA5IDMxLjUwNDIgMjQ2Ljk5MyAzMS44NDk3IDI0OC44MjQgMzIuMzY4OEwyNDcuNzU2IDM3LjI3NjlDMjQ2LjU4IDM2Ljg2MTYgMjQ0LjU0MSAzNi42MiAyNDMuMDE3IDM2LjYyQzIzOC4xODEgMzYuNjIgMjM2LjM4IDM3LjMxMDkgMjM2LjM4IDQzLjk4MjJDMjM2LjM4IDUwLjYxOTQgMjM4LjE4MSA1MS41MTggMjQzLjAxNyA1MS41MThDMjQ0LjU0MSA1MS41MTggMjQ2LjU4IDUxLjI0MDUgMjQ3Ljc1NiA1MC44NjExTDI0OC44MjQgNTUuODczQzI0Ni45NTkgNTYuMzU2MyAyNDQuMDkgNTYuNjY3OCAyNDEuODQzIDU2LjY2NzhDMjM0LjEgNTYuNjY3OCAyMzAuNDM4IDUzLjcyODUgMjMwLjQzOCA0My45MTIzQzIzMC40MzggMzQuMDYyMSAyMzQuMSAzMS41MDQyIDI0MS44NDMgMzEuNTA0MloiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik0yNjcuNTkzIDU2LjE4MzlDMjY0LjUxNiA0Ny4zMzYxIDI2Mi4yMzMgNDUuMzY1MyAyNTguNDMxIDQ0Ljk1VjU2LjE4MzlIMjUyLjg2OFYzMi4wOTI2SDI1OC40MzFWNDMuNjM2MUMyNjAuMzY4IDQxLjQ5MzUgMjYzLjg1OSAzNy4wNzA2IDI2Ni45MzQgMzIuMDkyNkgyNzMuNTcxQzI2OS41NjMgMzguMzE0NiAyNjYuNzY0IDQxLjkwODkgMjY1LjY5MiA0Mi45MTEyQzI2OC4yNTEgNDMuODc3OCAyNzAuNzAyIDQ1LjcxMDggMjc0LjE5NCA1Ni4xODM5SDI2Ny41OTNaIiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBkPSJNMjk5Ljc1MyA1Ni4xODM5SDI5NC4yNTZWNDAuMzE3NUMyOTEuNDIgNDUuNjc2OCAyODguMzA5IDUxLjEzOCAyODUuMiA1Ni4xODM5SDI3Ny45MDhWMzIuMDkyNkgyODMuMzY3VjQ4LjYxNDFDMjg2LjY4NiA0My4xODY4IDI4OS45NjggMzcuNTg3OCAyOTIuOTQ0IDMyLjA5MjZIMjk5Ljc1M1Y1Ni4xODM5WiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZD0iTTMxNC41NDUgMjYuMDc2OUMzMTQuNTQ1IDI3LjU2NDQgMzE1LjIzOCAyNy44NzQgMzE2LjYyMSAyNy44NzRDMzE3Ljk2NSAyNy44NzQgMzE4LjY5MiAyNy41NjQ0IDMxOC42OTIgMjYuMDc2OUgzMjEuOTQxQzMyMS45NDEgMjkuNDY1NCAzMTkuOTcyIDMxLjAyMDkgMzE2LjQ4IDMxLjAyMDlDMzEzLjA5MSAzMS4wMjA5IDMxMS4wNTMgMjkuNDY1NCAzMTEuMDUzIDI2LjA3NjlIMzE0LjU0NVpNMzI3LjUwOCA1Ni4xODQ0SDMyMi4wMTFWNDAuMzE4QzMxOS4xNzYgNDUuNjc1NCAzMTYuMDY4IDUxLjEzNjYgMzEyLjk1NSA1Ni4xODQ0SDMwNS42NjNWMzIuMDkzMUgzMTEuMTI0VjQ4LjYxMjdDMzE0LjQ0MSA0My4xODczIDMxNy43MjggMzcuNTg4MyAzMjAuNjk5IDMyLjA5MzFIMzI3LjUwOFY1Ni4xODQ0WiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZD0iTTExMi45OTkgNzIuMjI1MkgxMTYuODcxQzExMy43MjYgODAuMjQ0MyAxMDguODUyIDg5Ljk5MjUgMTA0Ljg3NiA5Ni4zMTg0SDEwMC41NTVDMTAxLjc5OSA5NC42NTkgMTAzLjM1NSA5Mi4zMDg4IDEwNC40NjEgOTAuMzM4QzEwMi45NzMgODUuODQzMyA5OC44NjM3IDc2Ljk5NTUgOTUuOTU4NSA3Mi4yMjUySDEwMC4wNzJDMTAyLjI0OCA3Ni4wOTY5IDEwNC45NDYgODEuNzI5OSAxMDYuNjcxIDg2LjUzNjFDMTA5LjA1OCA4MS43NjU4IDExMS42MTcgNzYuMzA0NiAxMTIuOTk5IDcyLjIyNTIiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik0xMjQuNjggOTYuMzE3OEgxMjEuMTg4VjcyLjIyNDZIMTI0LjY4VjgxLjg2OTFIMTM2LjIyM1Y3Mi4yMjQ2SDEzOS43MTZWOTYuMzE3OEgxMzYuMjIzVjg1LjA4MzlIMTI0LjY4Vjk2LjMxNzhaIiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBkPSJNMTY1Ljc1NiA5Ni4zMTc4SDE2Mi4yOThWNzcuMzc2MkMxNTguODA4IDgzLjczNiAxNTQuOTAyIDkwLjQwNzMgMTUwLjk5OCA5Ni4zMTc4SDE0Ni4zM1Y3Mi4yMjQ2SDE0OS43ODhWOTIuMDMwOEMxNTQuMDAxIDg1LjQ2MzMgMTU3Ljk3OSA3OC43NTgxIDE2MS41MDUgNzIuMjI0NkgxNjUuNzU2Vjk2LjMxNzhaIiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBkPSJNMTg0LjQxNiA5My4zNDQzQzE4Ni41MjQgOTMuMzQ0MyAxODcuMjg1IDkxLjc4ODggMTg3LjI4NSA4OS4zMDA3QzE4Ny4yODUgODYuNzA3IDE4Ni4zNTEgODQuOTc5NyAxODQuMjc2IDg0Ljk3OTdIMTc1Ljg3OFY5My4zNDQzSDE4NC40MTZaTTE3NS44NzggODIuMTEwM0gxODQuMTRDMTg2LjE0NSA4Mi4xMTAzIDE4Ni43NjQgODAuNTU2NyAxODYuNzY0IDc4LjU4NTlDMTg2Ljc2NCA3Ni40MDc1IDE4Ni4xNzkgNzUuMTk3NCAxODQuMTQgNzUuMTk3NEgxNzUuODc4VjgyLjExMDNaTTE5MS4wNTMgODkuNjEwM0MxOTEuMDUzIDk0LjIwODkgMTg4LjgwNSA5Ni4zMTc1IDE4NC45MzMgOTYuMzE3NUgxNzIuMzg1VjcyLjIyNDNIMTg0LjY1N0MxODkuNDY0IDcyLjIyNDMgMTkwLjQ2NCA3NC42NzgzIDE5MC40NjQgNzcuOTYzQzE5MC40NjQgODAuOTcwMSAxODkuODc3IDgzLjA3ODcgMTg1LjU5MiA4My40NjAxQzE5MC4xNTMgODMuNjY1OCAxOTEuMDUzIDg2LjE1MzkgMTkxLjA1MyA4OS42MTAzWiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZD0iTTIxMy43NDggNzIuMjI1MlY3NS4yMzIzSDIwMC4yNjZWODIuMDc3M0gyMDkuODQyVjg1LjA0ODZIMjAwLjI2NlY5My4zMDkzSDIxMy43NDhWOTYuMzE4NEgxOTYuNzc1VjcyLjIyNTJIMjEzLjc0OFoiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik0yMjkuNzE0IDg0LjkxMDJDMjMyLjEgODQuOTEwMiAyMzMuMjc2IDgzLjE0NzEgMjMzLjI3NiA4MC4yNDM3QzIzMy4yNzYgNzYuOTk0OSAyMzIuMSA3NS4xOTc4IDIyOS44NTIgNzUuMTk3OEgyMjIuMjQ4Vjg0LjkxMDJIMjI5LjcxNFpNMjE4LjcyNCA5Ni4zMTc4VjcyLjIyNDZIMjMwLjM3MUMyMzUuNTkxIDcyLjIyNDYgMjM3LjE0OCA3NS44NTQ3IDIzNy4xNDggODAuMjc5NkMyMzcuMTQ4IDg0LjIxOTMgMjM1LjMxNSA4Ny45MTc0IDIzMC41MTEgODcuOTE3NEgyMjIuMjQ4Vjk2LjMxNzhIMjE4LjcyNFoiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik0yNTIuMzQyIDcxLjYzNjlDMjU0LjUxOCA3MS42MzY5IDI1Ny4zMiA3Mi4wMTgyIDI1OS4xNTEgNzIuNTM3NEwyNTguMjg0IDc1LjY4MjNDMjU2LjkwMyA3NS4xNjMyIDI1NC41MTggNzQuODUxNyAyNTIuNzU1IDc0Ljg1MTdDMjQ3LjA4OCA3NC44NTE3IDI0NC45OCA3NS45NTggMjQ0Ljk4IDg0LjA4MDlDMjQ0Ljk4IDkyLjE2OTkgMjQ3LjA4OCA5My41NTE3IDI1Mi43NTUgOTMuNTUxN0MyNTQuNTE4IDkzLjU1MTcgMjU2LjkwMyA5My4yNDAyIDI1OC4yODQgOTIuNzU2OUwyNTkuMTUxIDk1LjkwMTlDMjU3LjI4NCA5Ni40NTUgMjU0LjUxOCA5Ni44MDA1IDI1Mi4zNDIgOTYuODAwNUMyNDQuNzcyIDk2LjgwMDUgMjQxLjE3OCA5My44NjMyIDI0MS4xNzggODQuMDQ2OUMyNDEuMTc4IDc0LjE5NDggMjQ0Ljc3MiA3MS42MzY5IDI1Mi4zNDIgNzEuNjM2OVoiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik0yODMuMzk3IDk2LjMxNzhIMjc5LjkzOVY3Ny4zNzYyQzI3Ni40NDYgODMuNzM2IDI3Mi41NDIgOTAuNDA3MyAyNjguNjM5IDk2LjMxNzhIMjYzLjk3VjcyLjIyNDZIMjY3LjQyN1Y5Mi4wMzA4QzI3MS42NDIgODUuNDYzMyAyNzUuNjE4IDc4Ljc1ODEgMjc5LjE0NiA3Mi4yMjQ2SDI4My4zOTdWOTYuMzE3OFoiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik0yOTYuMjEzIDk2LjMxNzhWNzUuMjMxOEgyODcuOTU0VjcyLjIyNDZIMzA4Vjc1LjIzMThIMjk5Ljc3NVY5Ni4zMTc4SDI5Ni4yMTNaIiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBkPSJNMzI5LjUzMiA3Mi4yMjUyVjc1LjIzMjNIMzE2LjA1MlY4Mi4wNzczSDMyNS42MjhWODUuMDQ4NkgzMTYuMDUyVjkzLjMwOTNIMzI5LjUzMlY5Ni4zMTg0SDMxMi41NjJWNzIuMjI1MkgzMjkuNTMyWiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZD0iTTM0MS4yMTMgOTYuMzE3OFY3NS4yMzE4SDMzMi45NVY3Mi4yMjQ2SDM1M1Y3NS4yMzE4SDM0NC43NzFWOTYuMzE3OEgzNDEuMjEzWiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0zNi4xMTgxIDY0LjYxMTZDMzYuMTE4MSA2NC4zOTI2IDM1Ljk0MDYgNjQuMjEzMyAzNS43MjE3IDY0LjIxMTRDMjAuMzg5NSA2My45OTYyIDguMDI2NjYgNTEuNTAzMiA4LjAyNjY2IDM2LjEyQzguMDI2NjYgMjAuNzM0OSAyMC4zODk1IDguMjQxODcgMzUuNzIxNyA4LjAyODU2QzM1Ljk0MDYgOC4wMjQ3OCAzNi4xMTgxIDcuODQ3MzMgMzYuMTE4MSA3LjYyNjQ3VjAuNDAyMDkyQzM2LjExODEgMC4yOTQ0OTEgMzYuMDc2NiAwLjE5MjU1MiAzNS45OTkyIDAuMTE3MDQyQzM1LjkyMTggMC4wNDE1MzI2IDM1LjgxOTggMS43OTUxZS0wNiAzNS43MTIyIDEuNzk1MWUtMDZDMTUuOTUxNCAwLjIyMDg2NyAwIDE2LjMwNjMgMCAzNi4xMkMwIDU1LjkzMTggMTUuOTUxNCA3Mi4wMTcyIDM1LjcxMjIgNzIuMjM4MUMzNS44MTk4IDcyLjI0IDM1LjkyMTggNzIuMTk2NiAzNS45OTkyIDcyLjEyMjlDMzYuMDc2NiA3Mi4wNDU1IDM2LjExODEgNzEuOTQzNiAzNi4xMTgxIDcxLjgzNlY2NC42MTE2WiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0zNi4xMjE2IDk2LjcxNjhDMzYuMTIxNiA5Ni40OTc5IDM2LjI5OSA5Ni4zMTg1IDM2LjUxOCA5Ni4zMTY2QzUxLjg1MDIgOTYuMTAxNCA2NC4yMTMgODMuNjA4NCA2NC4yMTMgNjguMjI1MkM2NC4yMTMgNTIuODQwMSA1MS44NTAyIDQwLjM0NzEgMzYuNTE4IDQwLjEzMzhDMzYuMjk5IDQwLjEzIDM2LjEyMTYgMzkuOTUyNSAzNi4xMjE2IDM5LjczMTdWMzIuNTA5MkMzNi4xMjE2IDMyLjQwMTYgMzYuMTYzMSAzMi4yOTc4IDM2LjI0MDUgMzIuMjIyMkMzNi4zMTc5IDMyLjE0NjcgMzYuNDE5OCAzMi4xMDUyIDM2LjUyNzQgMzIuMTA3MUM1Ni4yODgzIDMyLjMyNjEgNzIuMjM5NyA0OC40MTE1IDcyLjIzOTcgNjguMjI1MkM3Mi4yMzk3IDg4LjAzNyA1Ni4yODgzIDEwNC4xMjQgMzYuNTI3NCAxMDQuMzQzQzM2LjQxOTggMTA0LjM0NSAzNi4zMTc5IDEwNC4zMDQgMzYuMjQwNSAxMDQuMjI4QzM2LjE2MzEgMTA0LjE1MSAzNi4xMjE2IDEwNC4wNDkgMzYuMTIxNiAxMDMuOTQxVjk2LjcxNjhaIiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTM2LjExNzUgNTYuMTg0OEM0Mi43NjQyIDU2LjE4NDggNDguMTU5NCA2MS41NzQzIDQ4LjE1OTQgNjguMjI0OEM0OC4xNTk0IDc0Ljc0NTEgNDIuOTc5NCA4MC4wNTE1IDM2LjUxMiA4MC4yNTczQzM2LjI5NSA4MC4yNjQ4IDM2LjEyMzIgODAuNDQyMyAzNi4xMjMyIDgwLjY1OTRWODcuODgzN0MzNi4xMjMyIDg3Ljk5MzIgMzYuMTY0NyA4OC4wOTUyIDM2LjI0MjEgODguMTcwN0MzNi4zMTk1IDg4LjI0NjIgMzYuNDI1MiA4OC4yODc3IDM2LjUzMjggODguMjg1OEM0Ny40MjUxIDg4LjA2NjggNTYuMTg2IDc5LjE2OTkgNTYuMTg2IDY4LjIyNDhDNTYuMTg2IDU3LjE0MTkgNDcuMjAwNCA0OC4xNjAxIDM2LjExNzUgNDguMTYwMUMyOS40NzA4IDQ4LjE1ODIgMjQuMDc5NCA0Mi43NzA2IDI0LjA3OTQgMzYuMTIwMUMyNC4wNzk0IDI5LjU5OTggMjkuMjYxMiAyNC4yOTE1IDM1LjcyODYgMjQuMDg1N0MzNS45NDU3IDI0LjA3ODIgMzYuMTE3NSAyMy45MDA3IDM2LjExNzUgMjMuNjg1NVYxNi40NTkzQzM2LjExNzUgMTYuMzQ5OCAzNi4wNzQxIDE2LjI0NzggMzUuOTk4NiAxNi4xNzIzQzM1LjkyMTIgMTYuMDk2OCAzNS44MTU1IDE2LjA1NTMgMzUuNzA3OSAxNi4wNTcyQzI0LjgxNTYgMTYuMjc2MiAxNi4wNTI3IDI1LjE3MzEgMTYuMDUyNyAzNi4xMjAxQzE2LjA1MjcgNDcuMjAzIDI1LjAzNjUgNTYuMTg0OCAzNi4xMTc1IDU2LjE4NDhaIiBmaWxsPSJ3aGl0ZSIvPgo8L3N2Zz4K" alt="Самарский университет" width="200" height="60" loading="eager" style="height:50px;width:auto;">
+    <!-- HERO -->
+    <div class="survey-hero">
+      <div class="anonymous-badge">Анонимный опрос</div>
+      <h2>«Кадровая политика университета глазами коллектива»</h2>
+      <p>
+        Данный опрос анонимен и направлен на улучшение условий работы.
+        Пожалуйста, ответьте честно — это важно для принятия реальных решений.
+      </p>
     </div>
 
-  </div>
-</header>
-
-<!-- HERO -->
-<div class="survey-hero">
-  <div class="anonymous-badge">Анонимный опрос</div>
-  <h2>«Кадровая политика университета глазами коллектива»</h2>
-  <p>Данный опрос анонимен и направлен на улучшение условий работы. Пожалуйста, ответьте честно — это важно для принятия реальных решений.</p>
-</div>
-
-<!-- STICKY PROGRESS -->
-<div class="sticky-progress" id="sticky-progress-bar">
-  <div class="sticky-progress-inner">
-    <div class="progress-block" style="margin-bottom:0;">
-      <div class="progress-labels">
-        <span style="font-weight:600;color:var(--color-blue);">Прогресс заполнения</span>
-        <span id="progress-pct" style="font-weight:700;color:var(--color-blue-mid);">0%</span>
-      </div>
-      <div class="progress-bar-wrap" style="margin-top:var(--space-2);">
-        <div class="progress-bar-fill" id="progress-fill"></div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- MAIN -->
-<main class="main-wrap">
-
-
-
-  <form id="survey-form" novalidate>
-
-    <!-- BLOCK 1 -->
-    <div class="block-label">Блок 1. Закрытые вопросы</div>
-
-    <!-- Q1 -->
-    <div class="q-card" id="q-card-1">
-      <div class="q-title">1. Насколько справедлива и актуальна система оценки результатов вашего труда (KPI, эффективный контракт)?</div>
-      <div class="q-hint">☑ Выберите не более 3 вариантов</div>
-      <div class="options-list" id="q1-options">
-        <label class="opt-item"><input type="checkbox" name="q1" value="Показатели реально отражают мой вклад"><span class="opt-label">Показатели реально отражают мой вклад</span></label>
-        <label class="opt-item"><input type="checkbox" name="q1" value="Отдельные показатели формальны и не связаны с реальной работой"><span class="opt-label">Отдельные показатели формальны и не связаны с реальной работой</span></label>
-        <label class="opt-item"><input type="checkbox" name="q1" value="Система ориентирована на «галочку», а не на реальный результат"><span class="opt-label">Система ориентирована на «галочку», а не на реальный результат</span></label>
-        <label class="opt-item"><input type="checkbox" name="q1" value="Показатели устарели, не учитывают важные направления работы"><span class="opt-label">Показатели устарели, не учитывают важные направления работы</span></label>
-        <label class="opt-item"><input type="checkbox" name="q1" value="Я не понимаю, как формируется оценка результатов моего труда"><span class="opt-label">Я не понимаю, как формируется оценка результатов моего труда</span></label>
-        <label class="opt-item"><input type="checkbox" name="q1" value="В моём подразделении система оценки фактически не применима"><span class="opt-label">В моём подразделении система оценки фактически не применима</span></label>
-        <label class="opt-item"><input type="checkbox" name="q1" value="Выполнение KPI зависит не от меня, а от решений руководства и финансирования"><span class="opt-label">Выполнение KPI зависит не от меня, а от решений руководства и финансирования</span></label>
-        <label class="opt-item opt-other-trigger" id="q1-other-label"><input type="checkbox" name="q1" value="__other__" id="q1-other-cb"><span class="opt-label">Другое</span></label>
-      </div>
-      <div class="opt-other-wrap" id="q1-other-wrap" style="display:none;">
-        <input type="text" id="q1-other-input" placeholder="Напишите свой вариант…" maxlength="300">
+    <!-- STICKY PROGRESS -->
+    <div class="sticky-progress" id="sticky-progress-bar">
+      <div class="sticky-progress-inner">
+        <div class="progress-block" style="margin-bottom: 0">
+          <div class="progress-labels">
+            <span style="font-weight: 600; color: var(--color-blue)"
+              >Прогресс заполнения</span
+            >
+            <span
+              id="progress-pct"
+              style="font-weight: 700; color: var(--color-blue-mid)"
+              >0%</span
+            >
+          </div>
+          <div class="progress-bar-wrap" style="margin-top: var(--space-2)">
+            <div class="progress-bar-fill" id="progress-fill"></div>
+          </div>
+        </div>
       </div>
     </div>
 
-    <!-- Q2 -->
-    <div class="q-card" id="q-card-2">
-      <div class="q-title">2. Чего вам больше всего не хватает для продуктивной научной и педагогической работы?</div>
-      <div class="q-hint">☑ Выберите не более 3 вариантов</div>
-      <div class="options-list" id="q2-options">
-        <label class="opt-item"><input type="checkbox" name="q2" value="Современного оборудования и лабораторной базы"><span class="opt-label">Современного оборудования и лабораторной базы</span></label>
-        <label class="opt-item"><input type="checkbox" name="q2" value="Времени — перегружен учебной нагрузкой, нет часов на науку"><span class="opt-label">Времени — перегружен учебной нагрузкой, нет часов на науку</span></label>
-        <label class="opt-item"><input type="checkbox" name="q2" value="Доступа к актуальным технологиям и промышленным партнёрам"><span class="opt-label">Доступа к актуальным технологиям и промышленным партнёрам</span></label>
-        <label class="opt-item"><input type="checkbox" name="q2" value="Поддержки руководства при подаче грантов и проектных заявок"><span class="opt-label">Поддержки руководства при подаче грантов и проектных заявок</span></label>
-        <label class="opt-item"><input type="checkbox" name="q2" value="Наставника / опытного коллеги, готового делиться знаниями"><span class="opt-label">Наставника / опытного коллеги, готового делиться знаниями</span></label>
-        <label class="opt-item"><input type="checkbox" name="q2" value="Административной поддержки (юридической, бухгалтерской, организационной)"><span class="opt-label">Административной поддержки (юридической, бухгалтерской, организационной)</span></label>
-        <label class="opt-item"><input type="checkbox" name="q2" value="Доступа к зарубежным научным базам, журналам и литературе"><span class="opt-label">Доступа к зарубежным научным базам, журналам и литературе</span></label>
-        <label class="opt-item"><input type="checkbox" name="q2" value="Команды — нет единомышленников для совместной работы над проектами"><span class="opt-label">Команды — нет единомышленников для совместной работы над проектами</span></label>
-        <label class="opt-item"><input type="checkbox" name="q2" value="Чёткого понимания направления развития — нет индивидуального плана"><span class="opt-label">Чёткого понимания направления развития — нет индивидуального плана</span></label>
-        <label class="opt-item"><input type="checkbox" name="q2" value="Психологической безопасности — боюсь предлагать нестандартные идеи"><span class="opt-label">Психологической безопасности — боюсь предлагать нестандартные идеи</span></label>
-        <label class="opt-item"><input type="checkbox" name="q2" value="Признания результатов — хорошая работа остаётся незамеченной"><span class="opt-label">Признания результатов — хорошая работа остаётся незамеченной</span></label>
-        <label class="opt-item" id="q2-other-label"><input type="checkbox" name="q2" value="__other__" id="q2-other-cb"><span class="opt-label">Другое</span></label>
+    <!-- MAIN -->
+    <main class="main-wrap">
+      <form id="survey-form" novalidate>
+        <!-- BLOCK 1 -->
+        <div class="block-label">Блок 1. Закрытые вопросы</div>
+
+        <!-- Q1 -->
+        <div class="q-card" id="q-card-1">
+          <div class="q-title">
+            1. Насколько справедлива и актуальна система оценки результатов
+            вашего труда (KPI, эффективный контракт)?
+            <span style="color: var(--color-error)">*</span>
+          </div>
+          <div class="q-hint">☑ Выберите не более 3 вариантов</div>
+          <div class="options-list" id="q1-options">
+            <label class="opt-item"
+              ><input
+                type="checkbox"
+                name="q1"
+                value="Показатели реально отражают мой вклад"
+              /><span class="opt-label"
+                >Показатели реально отражают мой вклад</span
+              ></label
+            >
+            <label class="opt-item"
+              ><input
+                type="checkbox"
+                name="q1"
+                value="Отдельные показатели формальны и не связаны с реальной работой"
+              /><span class="opt-label"
+                >Отдельные показатели формальны и не связаны с реальной
+                работой</span
+              ></label
+            >
+            <label class="opt-item"
+              ><input
+                type="checkbox"
+                name="q1"
+                value="Система ориентирована на «галочку», а не на реальный результат"
+              /><span class="opt-label"
+                >Система ориентирована на «галочку», а не на реальный
+                результат</span
+              ></label
+            >
+            <label class="opt-item"
+              ><input
+                type="checkbox"
+                name="q1"
+                value="Показатели устарели, не учитывают важные направления работы"
+              /><span class="opt-label"
+                >Показатели устарели, не учитывают важные направления
+                работы</span
+              ></label
+            >
+            <label class="opt-item"
+              ><input
+                type="checkbox"
+                name="q1"
+                value="Я не понимаю, как формируется оценка результатов моего труда"
+              /><span class="opt-label"
+                >Я не понимаю, как формируется оценка результатов моего
+                труда</span
+              ></label
+            >
+            <label class="opt-item"
+              ><input
+                type="checkbox"
+                name="q1"
+                value="В моём подразделении система оценки фактически не применима"
+              /><span class="opt-label"
+                >В моём подразделении система оценки фактически не
+                применима</span
+              ></label
+            >
+            <label class="opt-item"
+              ><input
+                type="checkbox"
+                name="q1"
+                value="Выполнение KPI зависит не от меня, а от решений руководства и финансирования"
+              /><span class="opt-label"
+                >Выполнение KPI зависит не от меня, а от решений руководства и
+                финансирования</span
+              ></label
+            >
+            <label class="opt-item opt-other-trigger" id="q1-other-label"
+              ><input
+                type="checkbox"
+                name="q1"
+                value="__other__"
+                id="q1-other-cb"
+              /><span class="opt-label">Другое</span></label
+            >
+          </div>
+          <div class="opt-other-wrap" id="q1-other-wrap" style="display: none">
+            <input
+              type="text"
+              id="q1-other-input"
+              placeholder="Напишите свой вариант…"
+              maxlength="300"
+            />
+          </div>
+        </div>
+
+        <!-- Q2 -->
+        <div class="q-card" id="q-card-2">
+          <div class="q-title">
+            2. Чего вам больше всего не хватает для продуктивной научной и
+            педагогической работы?
+            <span style="color: var(--color-error)">*</span>
+          </div>
+          <div class="q-hint">☑ Выберите не более 3 вариантов</div>
+          <div class="options-list" id="q2-options">
+            <label class="opt-item"
+              ><input
+                type="checkbox"
+                name="q2"
+                value="Современного оборудования и лабораторной базы"
+              /><span class="opt-label"
+                >Современного оборудования и лабораторной базы</span
+              ></label
+            >
+            <label class="opt-item"
+              ><input
+                type="checkbox"
+                name="q2"
+                value="Времени — перегружен учебной нагрузкой, нет часов на науку"
+              /><span class="opt-label"
+                >Времени — перегружен учебной нагрузкой, нет часов на
+                науку</span
+              ></label
+            >
+            <label class="opt-item"
+              ><input
+                type="checkbox"
+                name="q2"
+                value="Доступа к актуальным технологиям и промышленным партнёрам"
+              /><span class="opt-label"
+                >Доступа к актуальным технологиям и промышленным партнёрам</span
+              ></label
+            >
+            <label class="opt-item"
+              ><input
+                type="checkbox"
+                name="q2"
+                value="Поддержки руководства при подаче грантов и проектных заявок"
+              /><span class="opt-label"
+                >Поддержки руководства при подаче грантов и проектных
+                заявок</span
+              ></label
+            >
+            <label class="opt-item"
+              ><input
+                type="checkbox"
+                name="q2"
+                value="Наставника / опытного коллеги, готового делиться знаниями"
+              /><span class="opt-label"
+                >Наставника / опытного коллеги, готового делиться знаниями</span
+              ></label
+            >
+            <label class="opt-item"
+              ><input
+                type="checkbox"
+                name="q2"
+                value="Административной поддержки (юридической, бухгалтерской, организационной)"
+              /><span class="opt-label"
+                >Административной поддержки (юридической, бухгалтерской,
+                организационной)</span
+              ></label
+            >
+            <label class="opt-item"
+              ><input
+                type="checkbox"
+                name="q2"
+                value="Доступа к зарубежным научным базам, журналам и литературе"
+              /><span class="opt-label"
+                >Доступа к зарубежным научным базам, журналам и литературе</span
+              ></label
+            >
+            <label class="opt-item"
+              ><input
+                type="checkbox"
+                name="q2"
+                value="Команды — нет единомышленников для совместной работы над проектами"
+              /><span class="opt-label"
+                >Команды — нет единомышленников для совместной работы над
+                проектами</span
+              ></label
+            >
+            <label class="opt-item"
+              ><input
+                type="checkbox"
+                name="q2"
+                value="Чёткого понимания направления развития — нет индивидуального плана"
+              /><span class="opt-label"
+                >Чёткого понимания направления развития — нет индивидуального
+                плана</span
+              ></label
+            >
+            <label class="opt-item"
+              ><input
+                type="checkbox"
+                name="q2"
+                value="Психологической безопасности — боюсь предлагать нестандартные идеи"
+              /><span class="opt-label"
+                >Психологической безопасности — боюсь предлагать нестандартные
+                идеи</span
+              ></label
+            >
+            <label class="opt-item"
+              ><input
+                type="checkbox"
+                name="q2"
+                value="Признания результатов — хорошая работа остаётся незамеченной"
+              /><span class="opt-label"
+                >Признания результатов — хорошая работа остаётся
+                незамеченной</span
+              ></label
+            >
+            <label class="opt-item" id="q2-other-label"
+              ><input
+                type="checkbox"
+                name="q2"
+                value="__other__"
+                id="q2-other-cb"
+              /><span class="opt-label">Другое</span></label
+            >
+          </div>
+          <div class="opt-other-wrap" id="q2-other-wrap" style="display: none">
+            <input
+              type="text"
+              id="q2-other-input"
+              placeholder="Напишите свой вариант…"
+              maxlength="300"
+            />
+          </div>
+        </div>
+
+        <!-- Q3 -->
+        <div class="q-card" id="q-card-3">
+          <div class="q-title">
+            3. Почему, на ваш взгляд, молодые коллеги (до 40 лет) уходят из
+            университета? <span style="color: var(--color-error)">*</span>
+          </div>
+          <div class="q-hint">☑ Выберите не более 3 вариантов</div>
+          <div class="options-list" id="q3-options">
+            <label class="opt-item"
+              ><input
+                type="checkbox"
+                name="q3"
+                value="Более высокая зарплата в индустрии"
+              /><span class="opt-label"
+                >Более высокая зарплата в индустрии</span
+              ></label
+            >
+            <label class="opt-item"
+              ><input
+                type="checkbox"
+                name="q3"
+                value="Отсутствие жилья или служебного общежития"
+              /><span class="opt-label"
+                >Отсутствие жилья или служебного общежития</span
+              ></label
+            >
+            <label class="opt-item"
+              ><input
+                type="checkbox"
+                name="q3"
+                value="Отсутствие перспектив карьерного роста"
+              /><span class="opt-label"
+                >Отсутствие перспектив карьерного роста</span
+              ></label
+            >
+            <label class="opt-item"
+              ><input
+                type="checkbox"
+                name="q3"
+                value="Неинтересные научные задачи, слабая оснащённость лабораторий"
+              /><span class="opt-label"
+                >Неинтересные научные задачи, слабая оснащённость
+                лабораторий</span
+              ></label
+            >
+            <label class="opt-item"
+              ><input
+                type="checkbox"
+                name="q3"
+                value="Отсутствие связи с реальным производством — наука «в вакууме»"
+              /><span class="opt-label"
+                >Отсутствие связи с реальным производством — наука «в
+                вакууме»</span
+              ></label
+            >
+            <label class="opt-item"
+              ><input
+                type="checkbox"
+                name="q3"
+                value="Избыточная нагрузка: бумажная отчётность, формальные проверки"
+              /><span class="opt-label"
+                >Избыточная нагрузка: бумажная отчётность, формальные
+                проверки</span
+              ></label
+            >
+            <label class="opt-item"
+              ><input
+                type="checkbox"
+                name="q3"
+                value="Давление со стороны старшего поколения, нет места инициативе"
+              /><span class="opt-label"
+                >Давление со стороны старшего поколения, нет места
+                инициативе</span
+              ></label
+            >
+            <label class="opt-item"
+              ><input
+                type="checkbox"
+                name="q3"
+                value="Отсутствие реального наставничества — молодой сотрудник предоставлен сам себе"
+              /><span class="opt-label"
+                >Отсутствие реального наставничества — молодой сотрудник
+                предоставлен сам себе</span
+              ></label
+            >
+            <label class="opt-item"
+              ><input
+                type="checkbox"
+                name="q3"
+                value="Перегрузка аудиторной нагрузкой при минимальном времени на науку"
+              /><span class="opt-label"
+                >Перегрузка аудиторной нагрузкой при минимальном времени на
+                науку</span
+              ></label
+            >
+            <label class="opt-item"
+              ><input
+                type="checkbox"
+                name="q3"
+                value="Непрозрачность решений руководства, ощущение несправедливости"
+              /><span class="opt-label"
+                >Непрозрачность решений руководства, ощущение
+                несправедливости</span
+              ></label
+            >
+            <label class="opt-item"
+              ><input
+                type="checkbox"
+                name="q3"
+                value="Социальная среда: нет сообщества, ощущение изолированности"
+              /><span class="opt-label"
+                >Социальная среда: нет сообщества, ощущение
+                изолированности</span
+              ></label
+            >
+            <label class="opt-item" id="q3-other-label"
+              ><input
+                type="checkbox"
+                name="q3"
+                value="__other__"
+                id="q3-other-cb"
+              /><span class="opt-label">Другое</span></label
+            >
+          </div>
+          <div class="opt-other-wrap" id="q3-other-wrap" style="display: none">
+            <input
+              type="text"
+              id="q3-other-input"
+              placeholder="Напишите свой вариант…"
+              maxlength="300"
+            />
+          </div>
+        </div>
+
+        <!-- Q4 -->
+        <div class="q-card" id="q-card-4">
+          <div class="q-title">
+            4. Как вы оцениваете реальную возможность карьерного роста в
+            университете для молодого сотрудника (до 40 лет)?
+            <span style="color: var(--color-error)">*</span>
+          </div>
+          <div class="q-hint">☑ Выберите не более 3 вариантов</div>
+          <div class="options-list" id="q4-options">
+            <label class="opt-item"
+              ><input
+                type="checkbox"
+                name="q4"
+                value="Продвижение происходит по результатам работы на конкурсной основе"
+              /><span class="opt-label"
+                >Продвижение происходит по результатам работы на конкурсной
+                основе</span
+              ></label
+            >
+            <label class="opt-item"
+              ><input
+                type="checkbox"
+                name="q4"
+                value="Карьерный рост возможен только в административную сторону — наука не вознаграждается"
+              /><span class="opt-label"
+                >Карьерный рост возможен только в административную сторону —
+                наука не вознаграждается</span
+              ></label
+            >
+            <label class="opt-item"
+              ><input
+                type="checkbox"
+                name="q4"
+                value="Университет не удерживает лучших: те, кто добивается результата, уходят в индустрию"
+              /><span class="opt-label"
+                >Университет не удерживает лучших: те, кто добивается
+                результата, уходят в индустрию</span
+              ></label
+            >
+            <label class="opt-item"
+              ><input
+                type="checkbox"
+                name="q4"
+                value="Горизонтальный рост возможен, вертикальный — нет"
+              /><span class="opt-label"
+                >Горизонтальный рост возможен, вертикальный — нет</span
+              ></label
+            >
+            <label class="opt-item"
+              ><input
+                type="checkbox"
+                name="q4"
+                value="Система роста непрозрачна: неизвестно, что нужно сделать для повышения"
+              /><span class="opt-label"
+                >Система роста непрозрачна: неизвестно, что нужно сделать для
+                повышения</span
+              ></label
+            >
+            <label class="opt-item"
+              ><input
+                type="checkbox"
+                name="q4"
+                value="Рост ограничен: должности заняты давно работающими сотрудниками"
+              /><span class="opt-label"
+                >Рост ограничен: должности заняты давно работающими
+                сотрудниками</span
+              ></label
+            >
+            <label class="opt-item"
+              ><input
+                type="checkbox"
+                name="q4"
+                value="Карьера возможна только при личной близости к руководству"
+              /><span class="opt-label"
+                >Карьера возможна только при личной близости к руководству</span
+              ></label
+            >
+            <label class="opt-item"
+              ><input
+                type="checkbox"
+                name="q4"
+                value="Мне сложно судить об этом"
+              /><span class="opt-label">Мне сложно судить об этом</span></label
+            >
+            <label class="opt-item" id="q4-other-label"
+              ><input
+                type="checkbox"
+                name="q4"
+                value="__other__"
+                id="q4-other-cb"
+              /><span class="opt-label">Другое</span></label
+            >
+          </div>
+          <div class="opt-other-wrap" id="q4-other-wrap" style="display: none">
+            <input
+              type="text"
+              id="q4-other-input"
+              placeholder="Напишите свой вариант…"
+              maxlength="300"
+            />
+          </div>
+        </div>
+
+        <!-- Q5 -->
+        <div class="q-card" id="q-card-5">
+          <div class="q-title">
+            5. Если бы вам предложили аналогичную должность в другой организации
+            с зарплатой на 20–30% выше, вы бы ушли?
+            <span style="color: var(--color-error)">*</span>
+          </div>
+          <div class="q-hint">◉ Один вариант ответа</div>
+          <div class="options-list" id="q5-options">
+            <label class="opt-item"
+              ><input
+                type="radio"
+                name="q5"
+                value="Да, ушёл бы — зарплата здесь недостаточно конкурентная"
+              /><span class="opt-label"
+                >Да, ушёл бы — зарплата здесь недостаточно конкурентная</span
+              ></label
+            >
+            <label class="opt-item"
+              ><input
+                type="radio"
+                name="q5"
+                value="Скорее да — если бы там были интересные проекты"
+              /><span class="opt-label"
+                >Скорее да — если бы там были интересные проекты</span
+              ></label
+            >
+            <label class="opt-item"
+              ><input
+                type="radio"
+                name="q5"
+                value="Скорее нет — меня удерживают коллектив, проекты, статус"
+              /><span class="opt-label"
+                >Скорее нет — меня удерживают коллектив, проекты, статус</span
+              ></label
+            >
+            <label class="opt-item"
+              ><input
+                type="radio"
+                name="q5"
+                value="Нет — я связываю своё будущее именно с этим университетом"
+              /><span class="opt-label"
+                >Нет — я связываю своё будущее именно с этим университетом</span
+              ></label
+            >
+            <label class="opt-item"
+              ><input
+                type="radio"
+                name="q5"
+                value="Затрудняюсь ответить"
+              /><span class="opt-label">Затрудняюсь ответить</span></label
+            >
+          </div>
+        </div>
+
+        <!-- BLOCK 2 -->
+        <div class="block-label">Блок 2. Открытые вопросы</div>
+
+        <!-- QA -->
+        <div class="q-card open-question" id="q-card-a">
+          <div class="q-title">
+            А. Назовите одну конкретную вещь, которую руководство должно
+            немедленно изменить в кадровой политике, чтобы вы захотели работать
+            здесь ещё 5–10 лет.
+          </div>
+          <div class="q-subtitle">
+            Например: жильё, прозрачность оценки труда, снижение нагрузки, рост
+            зарплаты, интересные проекты…
+          </div>
+          <textarea
+            id="qa-input"
+            name="qa"
+            rows="4"
+            placeholder="Ваш ответ…"
+            maxlength="1000"
+          ></textarea>
+          <div class="placeholder-hint">Не более 1–3 предложений</div>
+        </div>
+
+        <!-- QB -->
+        <div class="q-card open-question" id="q-card-b">
+          <div class="q-title">
+            Б. Назовите одну конкретную вещь, которая мешает вам заниматься
+            научными исследованиями в полную силу. Главный барьер.
+          </div>
+          <div class="q-subtitle">
+            Например: перегрузка преподаванием, бюрократия, нет оборудования,
+            нет финансирования, нет научного руководителя…
+          </div>
+          <textarea
+            id="qb-input"
+            name="qb"
+            rows="4"
+            placeholder="Ваш ответ…"
+            maxlength="1000"
+          ></textarea>
+          <div class="placeholder-hint">Не более 1–3 предложений</div>
+        </div>
+
+        <!-- QC -->
+        <div class="q-card open-question" id="q-card-c">
+          <div class="q-title">
+            В. Если бы вы были ректором на один день, что бы вы изменили в
+            системе работы с людьми в первую очередь?
+          </div>
+          <textarea
+            id="qc-input"
+            name="qc"
+            rows="4"
+            placeholder="Ваш ответ…"
+            maxlength="1000"
+          ></textarea>
+          <div class="placeholder-hint">Не более 1–3 предложений</div>
+        </div>
+
+        <!-- BLOCK 3 -->
+        <div class="block-label">Блок 3. Сведения об участнике</div>
+
+        <!-- Q6: Основная позиция -->
+        <div class="q-card" id="q-card-6">
+          <div class="q-title">
+            1. Ваша основная позиция в университете?
+            <span style="color: var(--color-error)">*</span>
+          </div>
+          <div class="q-hint">◉ Один вариант ответа</div>
+          <div class="options-list" id="q6-options">
+            <label class="opt-item"
+              ><input
+                type="radio"
+                name="q6"
+                value="ППС (профессорско-преподавательский состав)"
+              /><span class="opt-label"
+                >ППС (профессорско-преподавательский состав)</span
+              ></label
+            >
+            <label class="opt-item"
+              ><input
+                type="radio"
+                name="q6"
+                value="Руководитель (проректор, директор института, декан, заведующий кафедрой)"
+              /><span class="opt-label"
+                >Руководитель (проректор, директор института, декан, заведующий
+                кафедрой)</span
+              ></label
+            >
+            <label class="opt-item"
+              ><input
+                type="radio"
+                name="q6"
+                value="Научный сотрудник (НС, СНС, ВНС, ГНС)"
+              /><span class="opt-label"
+                >Научный сотрудник (НС, СНС, ВНС, ГНС)</span
+              ></label
+            >
+            <label class="opt-item"
+              ><input
+                type="radio"
+                name="q6"
+                value="Инженерно-технический персонал (инженер, техник, лаборант, механик)"
+              /><span class="opt-label"
+                >Инженерно-технический персонал (инженер, техник, лаборант,
+                механик)</span
+              ></label
+            >
+            <label class="opt-item"
+              ><input
+                type="radio"
+                name="q6"
+                value="Учебно-вспомогательный персонал (методист, диспетчер, специалист по УМР)"
+              /><span class="opt-label"
+                >Учебно-вспомогательный персонал (методист, диспетчер,
+                специалист по УМР)</span
+              ></label
+            >
+            <label class="opt-item"
+              ><input
+                type="radio"
+                name="q6"
+                value="Административно-управленческий персонал (АУП)"
+              /><span class="opt-label"
+                >Административно-управленческий персонал (АУП)</span
+              ></label
+            >
+            <label class="opt-item"
+              ><input
+                type="radio"
+                name="q6"
+                value="Обслуживающий персонал (хозяйственные, технические службы)"
+              /><span class="opt-label"
+                >Обслуживающий персонал (хозяйственные, технические
+                службы)</span
+              ></label
+            >
+            <label class="opt-item"
+              ><input type="radio" name="q6" value="Аспирант" /><span
+                class="opt-label"
+                >Аспирант</span
+              ></label
+            >
+            <label class="opt-item"
+              ><input type="radio" name="q6" value="Студент" /><span
+                class="opt-label"
+                >Студент</span
+              ></label
+            >
+          </div>
+        </div>
+
+        <!-- Q7: Дополнительные позиции -->
+        <div class="q-card" id="q-card-7">
+          <div class="q-title">
+            2. Ваши дополнительные позиции в университете?
+            <span style="color: var(--color-error)">*</span>
+          </div>
+          <div class="q-hint">☑ Укажите все варианты</div>
+          <div class="options-list" id="q7-options">
+            <label class="opt-item"
+              ><input
+                type="checkbox"
+                name="q7"
+                value="ППС (профессорско-преподавательский состав)"
+              /><span class="opt-label"
+                >ППС (профессорско-преподавательский состав)</span
+              ></label
+            >
+            <label class="opt-item"
+              ><input
+                type="checkbox"
+                name="q7"
+                value="Руководитель (проректор, директор института, декан, заведующий кафедрой)"
+              /><span class="opt-label"
+                >Руководитель (проректор, директор института, декан, заведующий
+                кафедрой)</span
+              ></label
+            >
+            <label class="opt-item"
+              ><input
+                type="checkbox"
+                name="q7"
+                value="Научный сотрудник (МНС, НС, СНС, ВНС, ГНС)"
+              /><span class="opt-label"
+                >Научный сотрудник (МНС, НС, СНС, ВНС, ГНС)</span
+              ></label
+            >
+            <label class="opt-item"
+              ><input
+                type="checkbox"
+                name="q7"
+                value="Инженерно-технический персонал (инженер, техник, лаборант, механик)"
+              /><span class="opt-label"
+                >Инженерно-технический персонал (инженер, техник, лаборант,
+                механик)</span
+              ></label
+            >
+            <label class="opt-item"
+              ><input
+                type="checkbox"
+                name="q7"
+                value="Учебно-вспомогательный персонал (методист, диспетчер, специалист по УМР)"
+              /><span class="opt-label"
+                >Учебно-вспомогательный персонал (методист, диспетчер,
+                специалист по УМР)</span
+              ></label
+            >
+            <label class="opt-item"
+              ><input
+                type="checkbox"
+                name="q7"
+                value="Административно-управленческий персонал (начальник управления, специалист, инспектор, помощник)"
+              /><span class="opt-label"
+                >Административно-управленческий персонал (начальник управления,
+                специалист, инспектор, помощник)</span
+              ></label
+            >
+            <label class="opt-item"
+              ><input
+                type="checkbox"
+                name="q7"
+                value="Обслуживающий персонал (хозяйственные, технические службы)"
+              /><span class="opt-label"
+                >Обслуживающий персонал (хозяйственные, технические
+                службы)</span
+              ></label
+            >
+            <label class="opt-item"
+              ><input type="checkbox" name="q7" value="Аспирант" /><span
+                class="opt-label"
+                >Аспирант</span
+              ></label
+            >
+            <label class="opt-item"
+              ><input type="checkbox" name="q7" value="Студент" /><span
+                class="opt-label"
+                >Студент</span
+              ></label
+            >
+            <label class="opt-item"
+              ><input
+                type="checkbox"
+                name="q7"
+                value="Имею только одну основную позицию"
+              /><span class="opt-label"
+                >Имею только одну основную позицию</span
+              ></label
+            >
+          </div>
+        </div>
+
+        <!-- Q8: Возраст -->
+        <div class="q-card" id="q-card-8">
+          <div class="q-title">
+            3. Ваш возраст <span style="color: var(--color-error)">*</span>
+          </div>
+          <div class="q-hint">◉ Один вариант ответа</div>
+          <div class="options-list" id="q8-options">
+            <label class="opt-item"
+              ><input type="radio" name="q8" value="До 20 лет" /><span
+                class="opt-label"
+                >До 20 лет</span
+              ></label
+            >
+            <label class="opt-item"
+              ><input type="radio" name="q8" value="20–25 лет" /><span
+                class="opt-label"
+                >20–25 лет</span
+              ></label
+            >
+            <label class="opt-item"
+              ><input type="radio" name="q8" value="25–30 лет" /><span
+                class="opt-label"
+                >25–30 лет</span
+              ></label
+            >
+            <label class="opt-item"
+              ><input type="radio" name="q8" value="30–40 лет" /><span
+                class="opt-label"
+                >30–40 лет</span
+              ></label
+            >
+            <label class="opt-item"
+              ><input type="radio" name="q8" value="40–50 лет" /><span
+                class="opt-label"
+                >40–50 лет</span
+              ></label
+            >
+            <label class="opt-item"
+              ><input type="radio" name="q8" value="50–60 лет" /><span
+                class="opt-label"
+                >50–60 лет</span
+              ></label
+            >
+            <label class="opt-item"
+              ><input type="radio" name="q8" value="Больше 60 лет" /><span
+                class="opt-label"
+                >Больше 60 лет</span
+              ></label
+            >
+          </div>
+        </div>
+
+        <!-- SUBMIT -->
+        <div class="submit-section">
+          <button type="submit" class="btn-submit">
+            <svg
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" />
+            </svg>
+            Отправить ответы
+          </button>
+          <div class="submit-note">
+            🔒 Опрос полностью анонимен. Никакие персональные данные не
+            собираются.
+          </div>
+        </div>
+      </form>
+
+      <!-- SUCCESS -->
+      <div id="success-screen">
+        <div class="success-icon">✅</div>
+        <h3>Спасибо за участие!</h3>
+        <p>
+          Ваши ответы отправлены и сохранены. Результаты помогут улучшить
+          условия работы в университете.
+        </p>
       </div>
-      <div class="opt-other-wrap" id="q2-other-wrap" style="display:none;">
-        <input type="text" id="q2-other-input" placeholder="Напишите свой вариант…" maxlength="300">
-      </div>
-    </div>
+    </main>
 
-    <!-- Q3 -->
-    <div class="q-card" id="q-card-3">
-      <div class="q-title">3. Почему, на ваш взгляд, молодые коллеги (до 40 лет) уходят из университета?</div>
-      <div class="q-hint">☑ Выберите не более 3 вариантов</div>
-      <div class="options-list" id="q3-options">
-        <label class="opt-item"><input type="checkbox" name="q3" value="Более высокая зарплата в индустрии"><span class="opt-label">Более высокая зарплата в индустрии</span></label>
-        <label class="opt-item"><input type="checkbox" name="q3" value="Отсутствие жилья или служебного общежития"><span class="opt-label">Отсутствие жилья или служебного общежития</span></label>
-        <label class="opt-item"><input type="checkbox" name="q3" value="Отсутствие перспектив карьерного роста"><span class="opt-label">Отсутствие перспектив карьерного роста</span></label>
-        <label class="opt-item"><input type="checkbox" name="q3" value="Неинтересные научные задачи, слабая оснащённость лабораторий"><span class="opt-label">Неинтересные научные задачи, слабая оснащённость лабораторий</span></label>
-        <label class="opt-item"><input type="checkbox" name="q3" value="Отсутствие связи с реальным производством — наука «в вакууме»"><span class="opt-label">Отсутствие связи с реальным производством — наука «в вакууме»</span></label>
-        <label class="opt-item"><input type="checkbox" name="q3" value="Избыточная нагрузка: бумажная отчётность, формальные проверки"><span class="opt-label">Избыточная нагрузка: бумажная отчётность, формальные проверки</span></label>
-        <label class="opt-item"><input type="checkbox" name="q3" value="Давление со стороны старшего поколения, нет места инициативе"><span class="opt-label">Давление со стороны старшего поколения, нет места инициативе</span></label>
-        <label class="opt-item"><input type="checkbox" name="q3" value="Отсутствие реального наставничества — молодой сотрудник предоставлен сам себе"><span class="opt-label">Отсутствие реального наставничества — молодой сотрудник предоставлен сам себе</span></label>
-        <label class="opt-item"><input type="checkbox" name="q3" value="Перегрузка аудиторной нагрузкой при минимальном времени на науку"><span class="opt-label">Перегрузка аудиторной нагрузкой при минимальном времени на науку</span></label>
-        <label class="opt-item"><input type="checkbox" name="q3" value="Непрозрачность решений руководства, ощущение несправедливости"><span class="opt-label">Непрозрачность решений руководства, ощущение несправедливости</span></label>
-        <label class="opt-item"><input type="checkbox" name="q3" value="Социальная среда: нет сообщества, ощущение изолированности"><span class="opt-label">Социальная среда: нет сообщества, ощущение изолированности</span></label>
-        <label class="opt-item" id="q3-other-label"><input type="checkbox" name="q3" value="__other__" id="q3-other-cb"><span class="opt-label">Другое</span></label>
-      </div>
-      <div class="opt-other-wrap" id="q3-other-wrap" style="display:none;">
-        <input type="text" id="q3-other-input" placeholder="Напишите свой вариант…" maxlength="300">
-      </div>
-    </div>
+    <footer>
+      © 2026 Самарский национальный исследовательский университет имени
+      академика С.П. Королёва.
+    </footer>
 
-    <!-- Q4 -->
-    <div class="q-card" id="q-card-4">
-      <div class="q-title">4. Как вы оцениваете реальную возможность карьерного роста в университете для молодого сотрудника (до 40 лет)?</div>
-      <div class="q-hint">☑ Выберите не более 3 вариантов</div>
-      <div class="options-list" id="q4-options">
-        <label class="opt-item"><input type="checkbox" name="q4" value="Продвижение происходит по результатам работы на конкурсной основе"><span class="opt-label">Продвижение происходит по результатам работы на конкурсной основе</span></label>
-        <label class="opt-item"><input type="checkbox" name="q4" value="Карьерный рост возможен только в административную сторону — наука не вознаграждается"><span class="opt-label">Карьерный рост возможен только в административную сторону — наука не вознаграждается</span></label>
-        <label class="opt-item"><input type="checkbox" name="q4" value="Университет не удерживает лучших: те, кто добивается результата, уходят в индустрию"><span class="opt-label">Университет не удерживает лучших: те, кто добивается результата, уходят в индустрию</span></label>
-        <label class="opt-item"><input type="checkbox" name="q4" value="Горизонтальный рост возможен, вертикальный — нет"><span class="opt-label">Горизонтальный рост возможен, вертикальный — нет</span></label>
-        <label class="opt-item"><input type="checkbox" name="q4" value="Система роста непрозрачна: неизвестно, что нужно сделать для повышения"><span class="opt-label">Система роста непрозрачна: неизвестно, что нужно сделать для повышения</span></label>
-        <label class="opt-item"><input type="checkbox" name="q4" value="Рост ограничен: должности заняты давно работающими сотрудниками"><span class="opt-label">Рост ограничен: должности заняты давно работающими сотрудниками</span></label>
-        <label class="opt-item"><input type="checkbox" name="q4" value="Карьера возможна только при личной близости к руководству"><span class="opt-label">Карьера возможна только при личной близости к руководству</span></label>
-        <label class="opt-item"><input type="checkbox" name="q4" value="Мне сложно судить об этом"><span class="opt-label">Мне сложно судить об этом</span></label>
-        <label class="opt-item" id="q4-other-label"><input type="checkbox" name="q4" value="__other__" id="q4-other-cb"><span class="opt-label">Другое</span></label>
-      </div>
-      <div class="opt-other-wrap" id="q4-other-wrap" style="display:none;">
-        <input type="text" id="q4-other-input" placeholder="Напишите свой вариант…" maxlength="300">
-      </div>
-    </div>
-
-    <!-- Q5 -->
-    <div class="q-card" id="q-card-5">
-      <div class="q-title">5. Если бы вам предложили аналогичную должность в другой организации с зарплатой на 20–30% выше, вы бы ушли?</div>
-      <div class="q-hint">◉ Один вариант ответа</div>
-      <div class="options-list" id="q5-options">
-        <label class="opt-item"><input type="radio" name="q5" value="Да, ушёл бы — зарплата здесь недостаточно конкурентная"><span class="opt-label">Да, ушёл бы — зарплата здесь недостаточно конкурентная</span></label>
-        <label class="opt-item"><input type="radio" name="q5" value="Скорее да — если бы там были интересные проекты"><span class="opt-label">Скорее да — если бы там были интересные проекты</span></label>
-        <label class="opt-item"><input type="radio" name="q5" value="Скорее нет — меня удерживают коллектив, проекты, статус"><span class="opt-label">Скорее нет — меня удерживают коллектив, проекты, статус</span></label>
-        <label class="opt-item"><input type="radio" name="q5" value="Нет — я связываю своё будущее именно с этим университетом"><span class="opt-label">Нет — я связываю своё будущее именно с этим университетом</span></label>
-        <label class="opt-item"><input type="radio" name="q5" value="Затрудняюсь ответить"><span class="opt-label">Затрудняюсь ответить</span></label>
-      </div>
-    </div>
-
-    <!-- BLOCK 2 -->
-    <div class="block-label">Блок 2. Открытые вопросы</div>
-
-    <!-- QA -->
-    <div class="q-card open-question" id="q-card-a">
-      <div class="q-title">А. Назовите одну конкретную вещь, которую руководство должно немедленно изменить в кадровой политике, чтобы вы захотели работать здесь ещё 5–10 лет.</div>
-      <div class="q-subtitle">Например: жильё, прозрачность оценки труда, снижение нагрузки, рост зарплаты, интересные проекты…</div>
-      <textarea id="qa-input" name="qa" rows="4" placeholder="Ваш ответ…" maxlength="1000"></textarea>
-      <div class="placeholder-hint">Не более 1–3 предложений</div>
-    </div>
-
-    <!-- QB -->
-    <div class="q-card open-question" id="q-card-b">
-      <div class="q-title">Б. Назовите одну конкретную вещь, которая мешает вам заниматься научными исследованиями в полную силу. Главный барьер.</div>
-      <div class="q-subtitle">Например: перегрузка преподаванием, бюрократия, нет оборудования, нет финансирования, нет научного руководителя…</div>
-      <textarea id="qb-input" name="qb" rows="4" placeholder="Ваш ответ…" maxlength="1000"></textarea>
-      <div class="placeholder-hint">Не более 1–3 предложений</div>
-    </div>
-
-    <!-- QC -->
-    <div class="q-card open-question" id="q-card-c">
-      <div class="q-title">В. Если бы вы были ректором на один день, что бы вы изменили в системе работы с людьми в первую очередь?</div>
-      <textarea id="qc-input" name="qc" rows="4" placeholder="Ваш ответ…" maxlength="1000"></textarea>
-      <div class="placeholder-hint">Не более 1–3 предложений</div>
-    </div>
-
-    <!-- SUBMIT -->
-    <div class="submit-section">
-      <button type="submit" class="btn-submit">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
-        Отправить ответы
-      </button>
-      <div class="submit-note">🔒 Опрос полностью анонимен. Никакие персональные данные не собираются.</div>
-    </div>
-
-  </form>
-
-  <!-- SUCCESS -->
-  <div id="success-screen">
-    <div class="success-icon">✅</div>
-    <h3>Спасибо за участие!</h3>
-    <p>Ваши ответы отправлены и сохранены. Результаты помогут улучшить условия работы в университете.</p>
-
-  </div>
-
-</main>
-
-
-<footer>
-  © 2026 Самарский национальный исследовательский университет имени академика С.П. Королёва.
-</footer>
-
-<script>
-/* ============================================================
+    <script>
+      /* ============================================================
    SURVEY APP — SSAU HR SURVEY
    ============================================================ */
 
-const GOOGLE_SHEETS_WEBAPP_URL = 'https://script.google.com/macros/s/AKfycbzN-tJI5hclQ7pSyFXs8t37TmtpmDNgU1o3yBsAeIBfx6Or2lrcNosbh7QsZBSVBqNV/exec';
+      const GOOGLE_SHEETS_WEBAPP_URL =
+        "https://script.google.com/macros/s/AKfycbxvqyMa2weSYbdfQiQxrIm9Dp1s5pbm3sCIsAwAEuhly9nbHUjv_YcJJbddB6TXzoPb/exec";
 
+      // ──────────────── FORM HELPERS ────────────────
 
-
-// ──────────────── FORM HELPERS ────────────────
-
-function generateID() {
-  return 'resp_' + Date.now() + '_' + Math.random().toString(36).slice(2, 8);
-}
-
-function getCheckboxValues(name, otherId) {
-  const checked = [...document.querySelectorAll(`input[name="${name}"]:checked`)];
-  return checked.map(cb => {
-    if (cb.value === '__other__') {
-      const txt = document.getElementById(otherId + '-input')?.value?.trim();
-      return txt ? `Другое: ${txt}` : 'Другое';
-    }
-    return cb.value;
-  }).join(' | ');
-}
-
-function getRadioValue(name) {
-  const el = document.querySelector(`input[name="${name}"]:checked`);
-  return el ? el.value : '';
-}
-
-// ──────────────── PROGRESS ────────────────
-function calcProgress() {
-  let filled = 0;
-  const total = 8;
-  if (document.querySelectorAll('input[name="q1"]:checked').length) filled++;
-  if (document.querySelectorAll('input[name="q2"]:checked').length) filled++;
-  if (document.querySelectorAll('input[name="q3"]:checked').length) filled++;
-  if (document.querySelectorAll('input[name="q4"]:checked').length) filled++;
-  if (document.querySelector('input[name="q5"]:checked')) filled++;
-  if (document.getElementById('qa-input').value.trim()) filled++;
-  if (document.getElementById('qb-input').value.trim()) filled++;
-  if (document.getElementById('qc-input').value.trim()) filled++;
-  const pct = Math.round((filled / total) * 100);
-  document.getElementById('progress-fill').style.width = pct + '%';
-  document.getElementById('progress-pct').textContent = pct + '%';
-}
-
-// ──────────────── OPTION INTERACTIONS ────────────────
-function setupCheckboxGroup(name, max) {
-  const inputs = [...document.querySelectorAll(`input[name="${name}"]`)];
-
-  function refresh() {
-    const checked = inputs.filter(i => i.checked);
-    const limitReached = max && checked.length >= max;
-    inputs.forEach(i => {
-      const item = i.closest('.opt-item');
-      item.classList.toggle('selected', i.checked);
-      if (!i.checked && limitReached) {
-        item.classList.add('opt-disabled');
-        i.disabled = true;
-      } else {
-        item.classList.remove('opt-disabled');
-        i.disabled = false;
+      function generateID() {
+        return (
+          "resp_" + Date.now() + "_" + Math.random().toString(36).slice(2, 8)
+        );
       }
-    });
-    calcProgress();
-  }
 
-  inputs.forEach(inp => inp.addEventListener('change', refresh));
-}
+      function getCheckboxValues(name, otherId) {
+        const checked = [
+          ...document.querySelectorAll(`input[name="${name}"]:checked`),
+        ];
+        return checked
+          .map((cb) => {
+            if (cb.value === "__other__") {
+              const txt = document
+                .getElementById(otherId + "-input")
+                ?.value?.trim();
+              return txt ? `Другое: ${txt}` : "Другое";
+            }
+            return cb.value;
+          })
+          .join(" | ");
+      }
 
-function setupOptionHighlight(name) {
-  setupCheckboxGroup(name, null);
-}
+      function getRadioValue(name) {
+        const el = document.querySelector(`input[name="${name}"]:checked`);
+        return el ? el.value : "";
+      }
 
-function setupMaxCheck(name, max) {
-  // Already handled in setupCheckboxGroup — re-init with max
-  const inputs = [...document.querySelectorAll(`input[name="${name}"]`)];
-  // Remove old listeners by replacing with fresh ones via re-init
-  inputs.forEach(inp => {
-    const clone = inp.cloneNode(true);
-    inp.parentNode.replaceChild(clone, inp);
-  });
-  setupCheckboxGroup(name, max);
-}
+      // ──────────────── PROGRESS ────────────────
+      function calcProgress() {
+        let filled = 0;
+        const total = 11;
+        if (document.querySelectorAll('input[name="q1"]:checked').length)
+          filled++;
+        if (document.querySelectorAll('input[name="q2"]:checked').length)
+          filled++;
+        if (document.querySelectorAll('input[name="q3"]:checked').length)
+          filled++;
+        if (document.querySelectorAll('input[name="q4"]:checked').length)
+          filled++;
+        if (document.querySelector('input[name="q5"]:checked')) filled++;
+        if (document.getElementById("qa-input").value.trim()) filled++;
+        if (document.getElementById("qb-input").value.trim()) filled++;
+        if (document.getElementById("qc-input").value.trim()) filled++;
+        if (document.querySelector('input[name="q6"]:checked')) filled++;
+        if (document.querySelectorAll('input[name="q7"]:checked').length)
+          filled++;
+        if (document.querySelector('input[name="q8"]:checked')) filled++;
+        const pct = Math.round((filled / total) * 100);
+        document.getElementById("progress-fill").style.width = pct + "%";
+        document.getElementById("progress-pct").textContent = pct + "%";
+      }
 
-function setupOther(qNum) {
-  const cb = document.getElementById(`q${qNum}-other-cb`);
-  const wrap = document.getElementById(`q${qNum}-other-wrap`);
-  if (!cb || !wrap) return;
-  cb.addEventListener('change', () => {
-    wrap.style.display = cb.checked ? 'block' : 'none';
-    if (cb.checked) wrap.querySelector('input').focus();
-  });
-}
+      // ──────────────── OPTION INTERACTIONS ────────────────
+      function setupCheckboxGroup(name, max) {
+        const inputs = [...document.querySelectorAll(`input[name="${name}"]`)];
 
-// ──────────────── VALIDATION ────────────────
-function validateForm() {
-  let ok = true;
-  // Require at least 1 checkbox for q1–q4 and q5
-  [1,2,3,4].forEach(n => {
-    const card = document.getElementById(`q-card-${n}`);
-    card.classList.remove('has-error');
-    card.querySelector('.error-msg')?.remove();
-    if (!document.querySelectorAll(`input[name="q${n}"]:checked`).length) {
-      card.classList.add('has-error');
-      const msg = document.createElement('div');
-      msg.className = 'error-msg';
-      msg.textContent = '⚠ Пожалуйста, выберите хотя бы один вариант';
-      card.appendChild(msg);
-      ok = false;
-    }
-  });
-  const card5 = document.getElementById('q-card-5');
-  card5.classList.remove('has-error');
-  card5.querySelector('.error-msg')?.remove();
-  if (!document.querySelector('input[name="q5"]:checked')) {
-    card5.classList.add('has-error');
-    const msg = document.createElement('div');
-    msg.className = 'error-msg';
-    msg.textContent = '⚠ Пожалуйста, выберите один вариант';
-    card5.appendChild(msg);
-    ok = false;
-  }
-  return ok;
-}
+        function refresh() {
+          const checked = inputs.filter((i) => i.checked);
+          const limitReached = max && checked.length >= max;
+          inputs.forEach((i) => {
+            const item = i.closest(".opt-item");
+            item.classList.toggle("selected", i.checked);
+            if (!i.checked && limitReached) {
+              item.classList.add("opt-disabled");
+              i.disabled = true;
+            } else {
+              item.classList.remove("opt-disabled");
+              i.disabled = false;
+            }
+          });
+          calcProgress();
+        }
 
+        inputs.forEach((inp) => inp.addEventListener("change", refresh));
+      }
 
+      function setupOptionHighlight(name) {
+        setupCheckboxGroup(name, null);
+      }
 
-// ──────────────── FORM SUBMIT ────────────────
-async function handleSubmit(e) {
-  e.preventDefault();
-  if (!validateForm()) {
-    document.querySelector('.has-error')?.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    return;
-  }
+      function setupMaxCheck(name, max) {
+        // Already handled in setupCheckboxGroup — re-init with max
+        const inputs = [...document.querySelectorAll(`input[name="${name}"]`)];
+        // Remove old listeners by replacing with fresh ones via re-init
+        inputs.forEach((inp) => {
+          const clone = inp.cloneNode(true);
+          inp.parentNode.replaceChild(clone, inp);
+        });
+        setupCheckboxGroup(name, max);
+      }
 
-  const id = generateID();
-  const ts = new Date().toISOString();
-  const data = {
-    id, ts,
-    q1: getCheckboxValues('q1', 'q1'),
-    q2: getCheckboxValues('q2', 'q2'),
-    q3: getCheckboxValues('q3', 'q3'),
-    q4: getCheckboxValues('q4', 'q4'),
-    q5: getRadioValue('q5'),
-    qa: document.getElementById('qa-input').value.trim(),
-    qb: document.getElementById('qb-input').value.trim(),
-    qc: document.getElementById('qc-input').value.trim(),
-  };
+      function setupOther(qNum) {
+        const cb = document.getElementById(`q${qNum}-other-cb`);
+        const wrap = document.getElementById(`q${qNum}-other-wrap`);
+        if (!cb || !wrap) return;
+        cb.addEventListener("change", () => {
+          wrap.style.display = cb.checked ? "block" : "none";
+          if (cb.checked) wrap.querySelector("input").focus();
+        });
+      }
 
-  // ── показать лоудер ──
-  const loader = document.getElementById('loader-overlay');
-  const submitBtn = document.querySelector('.btn-submit');
-  loader.classList.add('active');
-  submitBtn.disabled = true;
+      // ──────────────── VALIDATION ────────────────
+      function validateForm() {
+        let ok = true;
+        [1, 2, 3, 4].forEach((n) => {
+          const card = document.getElementById(`q-card-${n}`);
+          card.classList.remove("has-error");
+          card.querySelector(".error-msg")?.remove();
+          if (
+            !document.querySelectorAll(`input[name="q${n}"]:checked`).length
+          ) {
+            card.classList.add("has-error");
+            const msg = document.createElement("div");
+            msg.className = "error-msg";
+            msg.textContent = "⚠ Пожалуйста, выберите хотя бы один вариант";
+            card.appendChild(msg);
+            ok = false;
+          }
+        });
+        const card5 = document.getElementById("q-card-5");
+        card5.classList.remove("has-error");
+        card5.querySelector(".error-msg")?.remove();
+        if (!document.querySelector('input[name="q5"]:checked')) {
+          card5.classList.add("has-error");
+          const msg = document.createElement("div");
+          msg.className = "error-msg";
+          msg.textContent = "⚠ Пожалуйста, выберите один вариант";
+          card5.appendChild(msg);
+          ok = false;
+        }
+        // Блок 2: открытые вопросы
+        ["a", "b", "c"].forEach((letter) => {
+          const card = document.getElementById(`q-card-${letter}`);
+          card.classList.remove("has-error");
+          card.querySelector(".error-msg")?.remove();
+          if (!document.getElementById(`q${letter}-input`).value.trim()) {
+            card.classList.add("has-error");
+            const msg = document.createElement("div");
+            msg.className = "error-msg";
+            msg.textContent = "⚠ Пожалуйста, напишите ваш ответ";
+            card.appendChild(msg);
+            ok = false;
+          }
+        });
+        // Блок 3
+        ["q6", "q8"].forEach((name) => {
+          const num = name.replace("q", "");
+          const card = document.getElementById(`q-card-${num}`);
+          card.classList.remove("has-error");
+          card.querySelector(".error-msg")?.remove();
+          if (!document.querySelector(`input[name="${name}"]:checked`)) {
+            card.classList.add("has-error");
+            const msg = document.createElement("div");
+            msg.className = "error-msg";
+            msg.textContent = "⚠ Пожалуйста, выберите один вариант";
+            card.appendChild(msg);
+            ok = false;
+          }
+        });
+        const card7 = document.getElementById("q-card-7");
+        card7.classList.remove("has-error");
+        card7.querySelector(".error-msg")?.remove();
+        if (!document.querySelectorAll('input[name="q7"]:checked').length) {
+          card7.classList.add("has-error");
+          const msg = document.createElement("div");
+          msg.className = "error-msg";
+          msg.textContent = "⚠ Пожалуйста, выберите хотя бы один вариант";
+          card7.appendChild(msg);
+          ok = false;
+        }
+        return ok;
+      }
 
-  try {
-    const resp = await fetch(GOOGLE_SHEETS_WEBAPP_URL, {
-      method: 'POST',
-      mode: 'cors',
-      headers: { 'Content-Type': 'text/plain;charset=utf-8' },
-      body: JSON.stringify(data)
-    });
-    if (!resp.ok) throw new Error('HTTP ' + resp.status);
-  } catch (err) {
-    loader.classList.remove('active');
-    submitBtn.disabled = false;
-    alert('Не удалось отправить ответы в Google Sheets. Проверьте подключение к интернету и настройки Web App.');
-    return;
-  }
+      // ──────────────── FORM SUBMIT ────────────────
+      async function handleSubmit(e) {
+        e.preventDefault();
+        if (!validateForm()) {
+          document
+            .querySelector(".has-error")
+            ?.scrollIntoView({ behavior: "smooth", block: "center" });
+          return;
+        }
 
-  // ── скрыть лоудер после успеха ──
-  loader.classList.remove('active');
-  submitBtn.disabled = false;
+        const id = generateID();
+        const ts = new Date().toISOString();
+        const data = {
+          id,
+          ts,
+          q1: getCheckboxValues("q1", "q1"),
+          q2: getCheckboxValues("q2", "q2"),
+          q3: getCheckboxValues("q3", "q3"),
+          q4: getCheckboxValues("q4", "q4"),
+          q5: getRadioValue("q5"),
+          qa: document.getElementById("qa-input").value.trim(),
+          qb: document.getElementById("qb-input").value.trim(),
+          qc: document.getElementById("qc-input").value.trim(),
+          q6: getRadioValue("q6"),
+          q7: getCheckboxValues("q7", "q7"),
+          q8: getRadioValue("q8"),
+        };
 
+        // ── показать лоудер ──
+        const loader = document.getElementById("loader-overlay");
+        const submitBtn = document.querySelector(".btn-submit");
+        loader.classList.add("active");
+        submitBtn.disabled = true;
 
-  document.getElementById('survey-form').style.display = 'none';
-  const success = document.getElementById('success-screen');
-  success.classList.add('visible');
-  success.scrollIntoView({ behavior: 'smooth', block: 'start' });
-}
+        try {
+          const resp = await fetch(GOOGLE_SHEETS_WEBAPP_URL, {
+            method: "POST",
+            mode: "cors",
+            headers: { "Content-Type": "text/plain;charset=utf-8" },
+            body: JSON.stringify(data),
+          });
+          if (!resp.ok) throw new Error("HTTP " + resp.status);
+        } catch (err) {
+          loader.classList.remove("active");
+          submitBtn.disabled = false;
+          alert(
+            "Не удалось отправить ответы в Google Sheets. Проверьте подключение к интернету и настройки Web App.",
+          );
+          return;
+        }
 
-// ──────────────── INIT ────────────────
-document.addEventListener('DOMContentLoaded', async () => {
+        // ── скрыть лоудер после успеха ──
+        loader.classList.remove("active");
+        submitBtn.disabled = false;
 
-  // Setup interactions
-  [1,2,3,4].forEach(n => {
-    setupCheckboxGroup(`q${n}`, 3);
-    setupOther(n);
-  });
-  setupCheckboxGroup('q5', null);
-  document.querySelectorAll('textarea').forEach(t => t.addEventListener('input', calcProgress));
+        document.getElementById("survey-form").style.display = "none";
+        const success = document.getElementById("success-screen");
+        success.classList.add("visible");
+        success.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
 
-  document.getElementById('survey-form').addEventListener('submit', handleSubmit);
+      // ──────────────── INIT ────────────────
+      document.addEventListener("DOMContentLoaded", async () => {
+        // Setup interactions
+        [1, 2, 3, 4].forEach((n) => {
+          setupCheckboxGroup(`q${n}`, 3);
+          setupOther(n);
+        });
+        setupCheckboxGroup("q5", null);
+        setupCheckboxGroup("q6", null);
+        setupCheckboxGroup("q7", null);
+        setupCheckboxGroup("q8", null);
+        document
+          .querySelectorAll('input[name="q6"], input[name="q8"]')
+          .forEach((r) => r.addEventListener("change", calcProgress));
+        document
+          .querySelectorAll("textarea")
+          .forEach((t) => t.addEventListener("input", calcProgress));
 
+        document
+          .getElementById("survey-form")
+          .addEventListener("submit", handleSubmit);
+      });
+    </script>
 
-
-
-
-});
-</script>
-
-<div id="loader-overlay" role="status" aria-live="polite" aria-label="Отправка данных">
-  <div class="loader-box">
-    <div class="loader-spinner"></div>
-    <span class="loader-text">Отправка ответов…</span>
-  </div>
-</div>
-
-</body>
+    <div
+      id="loader-overlay"
+      role="status"
+      aria-live="polite"
+      aria-label="Отправка данных"
+    >
+      <div class="loader-box">
+        <div class="loader-spinner"></div>
+        <span class="loader-text">Отправка ответов…</span>
+      </div>
+    </div>
+  </body>
 </html>
