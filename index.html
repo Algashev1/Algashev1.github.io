@@ -594,6 +594,7 @@
     <div id="loader-overlay">
       <div class="loader-spinner"></div>
       <span style="color: var(--color-blue); font-weight: 700">Отправка…</span>
+      <span style="color: var(--color-blue); font-weight: 700">Пожалуйста, не закрывайте страницу и дождитесь отправки формы</span>
     </div>
 
     <main>
@@ -1735,7 +1736,7 @@
           loader.classList.remove("active");
           submitBtn.disabled = false;
           alert(
-            "Не удалось отправить ответы. Проверьте подключение к интернету и настройки Web App.",
+            "Ошибка при отправке формы. Пожалуйста, повторите попытку или свяжитесь с нами по адресу algashev.ga@ssau.ru.",
           );
           return;
         }
